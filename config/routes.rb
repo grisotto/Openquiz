@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :assuntos do
-
-  resources :temas
+  resources :assuntos do |assuntos|
+  	resources :temas, :name_prefix => "assunto_"
 end
-resources :temas
+
+resources :temas do |temas|
+	resources :questaos, :name_prefix => "tema_"
+end	
   resources :questaos
   mount Upmin::Engine => '/admin'
   root to: 'visitors#index'
