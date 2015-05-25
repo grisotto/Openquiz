@@ -1,0 +1,7 @@
+rails generate model Questaouser questao_id:integer entendimento:integer
+
+rails g scaffold Assunto nome_assunto:string descricao:text link_image:string
+
+rails g scaffold Tema nome_tema assunto_id:integer
+
+rails g scaffold Questao pergunta:text resposta:text dica:text tema_id:integer

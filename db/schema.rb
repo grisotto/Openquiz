@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525180646) do
+ActiveRecord::Schema.define(version: 20150525181654) do
+
+  create_table "assuntos", force: :cascade do |t|
+    t.string   "nome_assunto"
+    t.text     "descricao"
+    t.string   "link_image"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "assuntos", ["user_id"], name: "index_assuntos_on_user_id"
+
+  create_table "questaos", force: :cascade do |t|
+    t.text     "pergunta"
+    t.text     "resposta"
+    t.text     "dica"
+    t.integer  "tema_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questaos", ["tema_id"], name: "index_questaos_on_tema_id"
+  add_index "questaos", ["user_id"], name: "index_questaos_on_user_id"
+
+  create_table "questaousers", force: :cascade do |t|
+    t.integer  "entendimento"
+    t.integer  "questao_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "questaousers", ["questao_id"], name: "index_questaousers_on_questao_id"
+  add_index "questaousers", ["user_id"], name: "index_questaousers_on_user_id"
+
+  create_table "temas", force: :cascade do |t|
+    t.string   "nome_tema"
+    t.integer  "assunto_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "temas", ["assunto_id"], name: "index_temas_on_assunto_id"
+  add_index "temas", ["user_id"], name: "index_temas_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

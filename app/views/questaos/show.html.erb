@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pergunta:</strong>
+  <%= @questao.pergunta %>
+</p>
+
+<p>
+  <strong>Resposta:</strong>
+  <%= @questao.resposta %>
+</p>
+
+<p>
+  <strong>Dica:</strong>
+  <%= @questao.dica %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @questao.tema_id %>
+</p>
+
+<%= link_to 'Edit', edit_questao_path(@questao) %> |
+<%= link_to 'Back', questaos_path %>

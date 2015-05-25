@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Questaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pergunta</th>
+      <th>Resposta</th>
+      <th>Dica</th>
+      <th>Tema</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questaos.each do |questao| %>
+      <tr>
+        <td><%= questao.pergunta %></td>
+        <td><%= questao.resposta %></td>
+        <td><%= questao.dica %></td>
+        <td><%= questao.tema_id %></td>
+        <td><%= link_to 'Show', questao %></td>
+        <td><%= link_to 'Edit', edit_questao_path(questao) %></td>
+        <td><%= link_to 'Destroy', questao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Questao', new_questao_path %>

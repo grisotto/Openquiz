@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome assunto:</strong>
+  <%= @assunto.nome_assunto %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @assunto.descricao %>
+</p>
+
+<p>
+  <strong>Link image:</strong>
+  <%= @assunto.link_image %>
+</p>
+
+<%= link_to 'Edit', edit_assunto_path(@assunto) %> |
+<%= link_to 'Back', assuntos_path %>
+
+
+

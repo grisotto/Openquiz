@@ -1,0 +1,14 @@
+<%= simple_form_for(@questao) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :pergunta %>
+    <%= f.input :resposta %>
+    <%= f.input :dica %>
+    <%= f.input :tema_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
