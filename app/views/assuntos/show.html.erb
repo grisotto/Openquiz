@@ -14,6 +14,15 @@
   <strong>Link image:</strong>
   <%= @assunto.link_image %>
 </p>
+<h2>Temas</h2>
+<% @assunto.temas.each do |tema| %>
+  <p>
+    
+    <%= tema.nome_tema %>
+  </p>
+ 
+
+<% end %>
 
 <%= link_to 'Edit', edit_assunto_path(@assunto) %> |
 <%= link_to 'Back', assuntos_path %>
