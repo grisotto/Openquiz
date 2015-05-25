@@ -1,4 +1,7 @@
 class TemasController < ApplicationController
+  before_action :authenticate_user!
+ before_action :admin_only, only:  [:edit, :update, :destroy]
+
   before_action :set_tema, only: [:show, :edit, :update, :destroy]
 
   # GET /temas
@@ -64,6 +67,11 @@ class TemasController < ApplicationController
   end
 
   private
+def admin_only
+    unless current_user.admin?
+      redirect_to :back, :alert => "Access denied."
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_tema
       @tema = Tema.find(params[:id])
