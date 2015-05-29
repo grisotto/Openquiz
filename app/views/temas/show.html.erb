@@ -9,6 +9,13 @@
   <strong>Assunto:</strong>
   <%= @tema.assunto_id %>
 </p>
+<h2>Questões</h2>
+<% @tema.questaos.each do |questao| %>
+  <p>
+    
+    <li><%= link_to questao.id, questao %></li>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_tema_path(@tema) %> |
 <%= link_to 'Back', temas_path %>

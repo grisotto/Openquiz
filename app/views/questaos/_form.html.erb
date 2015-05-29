@@ -5,7 +5,11 @@
     <%= f.input :pergunta %>
     <%= f.input :resposta %>
     <%= f.input :dica %>
-    <%= f.input :tema_id %>
+   <%= f.label :tema_id %>
+    <%= f.collection_select(:tema_id, Tema.all, :id, :nome_tema, prompt: true) %>
+        
+   
+    
   </div>
 
   <div class="form-actions">

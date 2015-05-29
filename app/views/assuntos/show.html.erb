@@ -18,7 +18,7 @@
 <% @assunto.temas.each do |tema| %>
   <p>
     
-    <%= tema.nome_tema %>
+    <li><%= link_to tema.nome_tema, tema %></li>
   </p>
  
 
