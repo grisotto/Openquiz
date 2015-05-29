@@ -7,7 +7,8 @@
 
 <p>
   <strong>Assunto:</strong>
-  <%= @tema.assunto_id %>
+  <%= @tema.assunto.nome_assunto %>
+
 </p>
 <h2>Questões</h2>
 <% @tema.questaos.each do |questao| %>
