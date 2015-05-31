@@ -6,6 +6,7 @@ class QuestaosController < ApplicationController
 
   # GET /questaos
   # GET /questaos.json
+  #daniel
   def index
     @questaos = Questao.all
   end
