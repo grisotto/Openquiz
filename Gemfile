@@ -13,7 +13,7 @@ group :development, :test do
   gem 'spring'
 end
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '3.5.1'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
@@ -28,6 +28,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  
   gem 'rails_12factor'
 end
