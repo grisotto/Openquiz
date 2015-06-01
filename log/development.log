@@ -15592,33 +15592,3 @@ Processing by Devise::PasswordsController#new as HTML
   Rendered layouts/_navigation.html.erb (1.1ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 167ms (Views: 165.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for ::1 at 2015-05-31 18:30:19 -0300
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by VisitorsController#index as HTML
-  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
-  Rendered visitors/index.html.erb within layouts/application (9.0ms)
-  Rendered layouts/_navigation_links.html.erb (3.9ms)
-  Rendered layouts/_navigation.html.erb (5.1ms)
-  Rendered layouts/_messages.html.erb (0.4ms)
-Completed 200 OK in 829ms (Views: 807.0ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/users/sign_up" for ::1 at 2015-05-31 18:30:24 -0300
-Processing by Devise::RegistrationsController#new as HTML
-  Rendered devise/registrations/new.html.erb within layouts/application (152.1ms)
-  Rendered layouts/_navigation_links.html.erb (0.5ms)
-  Rendered layouts/_navigation.html.erb (1.2ms)
-  Rendered layouts/_messages.html.erb (0.1ms)
-Completed 200 OK in 263ms (Views: 251.0ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/" for ::1 at 2015-05-31 18:30:30 -0300
-Processing by VisitorsController#index as HTML
-  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
-  Rendered visitors/index.html.erb within layouts/application (1.2ms)
-  Rendered layouts/_navigation_links.html.erb (1.0ms)
-  Rendered layouts/_navigation.html.erb (2.4ms)
-  Rendered layouts/_messages.html.erb (0.4ms)
-Completed 200 OK in 147ms (Views: 146.4ms | ActiveRecord: 0.1ms)
