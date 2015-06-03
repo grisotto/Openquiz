@@ -6,7 +6,7 @@
     <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
   <li><%= link_to 'Entrar', new_user_session_path,target: '_self' %></li>
-  <li><%= link_to 'Não tem cadastro?', new_user_registration_path,target: '_self'  %></li>
+  <li><%= link_to 'Não possui cadastro?', new_user_registration_path,target: '_self'  %></li>
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
