@@ -10,9 +10,8 @@
   </head>
   <body>
     <header>
-     <%= render 'layouts/navigation' %>
+       <%= render 'layouts/navigation' %>
         <div class="header-center">
-          <div class="header-top"></div>
           <!-- shell -->
           <div class="shell">
             <div class="header-inner">
@@ -45,20 +44,18 @@
             <div class="cl">&nbsp;</div>
           </div>
           <!-- end of shell --> 
-          <div class="header-bottom"></div>
         </div>
     </header>
   <div class="main">
-        <span class="shadow-top"></span>
-        <!-- shell -->
-        <div class="shell">
-          <div class="container">
+      <span class="shadow-top"></span>
+      <div class="container">
+      <div class="shell">
        <%= render 'layouts/messages' %>
        <%= yield %>
        </div>
-        </div>
-    </main>
-  <div id="footer-push"></div>
+       </div>
+    </div>
+      <div id="footer-push"></div>
 <footer>
     <div class="footer-bottom">
       <div class="shell">
@@ -76,5 +73,5 @@
       </div>
     </div>
 </footer>
-      </body>
+</body>
 </html>
