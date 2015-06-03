@@ -11,13 +11,70 @@
   <body>
     <header>
      <%= render 'layouts/navigation' %>
+        <div class="header-center">
+          <div class="header-top"></div>
+          <!-- shell -->
+          <div class="shell">
+            <div class="header-inner">
+              <!-- header-cnt -->
+              <div class="header-cnt">
+                <h1 id="logo"><a href="#">OpenQuiz</a></h1>   
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quam ante, egestas tristique consequat ut, pulvinar a ante.
+                  Donec commodo eros at felis tempor at porttitor mauris adipisci morbi in velit sapien modo eros at felis te adispicing ulvinar a ante donec commodo eros at felis.
+                </p>
+
+                <a href="#" class="blue-btn">Registre-se Agora!</a>
+              </div>
+              <!-- end of header-cnt -->
+              <!-- slider -->
+              <div class="slider-holder">
+                <div class="flexslider">
+                  <ul class="slides">
+                    <li>  <%= image_tag("slide-img.png") %></li>
+                    <li>  <%= image_tag("slide-img1.png") %></li>
+                     <li>  <%= image_tag("slide-img2.png") %></li>
+                      <li>  <%= image_tag("slide-img3.png") %></li>
+                       <li>  <%= image_tag("slide-img4.png") %></li>
+                   </ul>
+                </div>
+              </div>
+              <!-- end of slider -->
+              <div class="cl">&nbsp;</div>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </div>
+          <!-- end of shell --> 
+          <div class="header-bottom"></div>
+        </div>
     </header>
-    <main role="main">
+  <div class="main">
+        <span class="shadow-top"></span>
+        <!-- shell -->
+        <div class="shell">
+          <div class="container">
        <%= render 'layouts/messages' %>
        <%= yield %>
+       </div>
+        </div>
     </main>
-    <footer role="footer">
-    <p></p>
-        </footer>
-  </body>
+  <div id="footer-push"></div>
+<footer>
+    <div class="footer-bottom">
+      <div class="shell">
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Logar-se</a></li>
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+          <div class="cl">&nbsp;</div>
+        </nav>
+        <p class="copy">&copy; Copyright 2015<span>|</span>OpenQuiz.</p>
+      </div>
+    </div>
+</footer>
+      </body>
 </html>
