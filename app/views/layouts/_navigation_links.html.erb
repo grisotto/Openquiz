@@ -1,15 +1,16 @@
 <%# add navigation links to this file %>
+<li><%= link_to 'Inicio', root_path, class: 'active',target: '_self' %></li>
 <% if user_signed_in? %>
-  <li><%= link_to 'Dados Pessoais', edit_user_registration_path %></li>
-   <li><%= link_to 'Assuntos', '/assuntos' %></li>
+  <li><%= link_to 'Dados Pessoais', edit_user_registration_path,target: '_self'  %></li>
+   <li><%= link_to 'Assuntos', '/assuntos',target: '_self'  %></li>
     <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Entrar', new_user_session_path %></li>
-  <li><%= link_to 'Não tem cadastro?', new_user_registration_path %></li>
+  <li><%= link_to 'Entrar', new_user_session_path,target: '_self' %></li>
+  <li><%= link_to 'Não tem cadastro?', new_user_registration_path,target: '_self'  %></li>
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Admin', '/admin' %></li>
-    <li><%= link_to 'Usuarios Cadastrados', users_path %></li>
+    <li><%= link_to 'Admin', '/admin'%></li>
+    <li><%= link_to 'Usuarios Cadastrados', users_path,target: '_self'  %></li>
   <% end %>
 <% end %>
