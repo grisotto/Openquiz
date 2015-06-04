@@ -1,31 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nome assunto:</strong>
-  <%= @assunto.nome_assunto %>
+  <h2><%= @assunto.nome_assunto %></h2>
+  <strong>Questoes Estudadas:</strong>
 </p>
 
 <p>
-  <strong>Descricao:</strong>
-  <%= @assunto.descricao %>
-</p>
-
-<p>
-  <strong>Link image:</strong>
-  <%= @assunto.link_image %>
+  <%=image_tag(@assunto.link_image_url(:thumb)) %>
 </p>
 <h2>Temas</h2>
 <% @assunto.temas.each do |tema| %>
   <p>
-    
     <li><%= link_to tema.nome_tema, tema %></li>
   </p>
  
-
 <% end %>
-
-<%= link_to 'Edit', edit_assunto_path(@assunto) %> |
-<%= link_to 'Back', assuntos_path %>
+<%= link_to 'Cadastrar Nova Questao', new_questao_path%>
+<%= link_to 'Voltar', assuntos_path %>
 
 
 

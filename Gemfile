@@ -16,6 +16,8 @@ gem 'bootstrap-sass'
 gem 'devise', '3.5.1'
 gem 'simple_form'
 gem 'unicorn'
+gem 'mini_magick', '3.8.0'
+gem 'carrierwave'
 gem 'unicorn-rails'
 gem 'upmin-admin'
 group :development do
