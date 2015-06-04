@@ -22,8 +22,12 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quam ante, egestas tristique consequat ut, pulvinar a ante.
                   Donec commodo eros at felis tempor at porttitor mauris adipisci morbi in velit sapien modo eros at felis te adispicing ulvinar a ante donec commodo eros at felis.
                 </p>
-
-                <a href="#" class="blue-btn">Registre-se Agora!</a>
+              <% if user_signed_in? %>
+           
+              <%= link_to 'Assuntos já Iniciados', '/assuntos',target: '_self',class:'blue-btn'%>
+              <% else %>
+                <%= link_to 'Cadastrar-se', new_user_registration_path,target: '_self',class:'blue-btn'  %>
+                <% end %>
               </div>
               <!-- end of header-cnt -->
               <!-- slider -->
