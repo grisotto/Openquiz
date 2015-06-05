@@ -7,7 +7,10 @@ class AssuntosController < ApplicationController
   # GET /assuntos
   # GET /assuntos.json
   def index
-    @assuntos = Assunto.all
+    # @assuntos = Assunto.all - agora so mostra os assuntos com disponivel = 1
+    @assuntos = Assunto.where(:disponivel => '1').all
+
+
   end
 
   # GET /assuntos/1
@@ -31,8 +34,10 @@ class AssuntosController < ApplicationController
 	@assunto.user = current_user
     respond_to do |format|
       if @assunto.save
+        #format.html { redirect_to @assunto, notice: 'Assunto was successfully created.' }
+        #format.json { render :show, status: :created, location: @assunto }
         format.html { redirect_to @assunto, notice: 'Assunto was successfully created.' }
-        format.json { render :show, status: :created, location: @assunto }
+        format.json { render :index, status: :created, location: @assunto }
       else
         format.html { render :new }
         format.json { render json: @assunto.errors, status: :unprocessable_entity }
@@ -74,6 +79,11 @@ def admin_only
     # Use callbacks to share common setup or constraints between actions.
     def set_assunto
       @assunto = Assunto.find(params[:id])
+      #Logica para nao deixar o usuario editar modulos com disponivel = 0
+     # unless @assunto.disponivel == 1
+      #    redirect_to :back, :alert => "Access denied."
+      # end
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

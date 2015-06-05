@@ -7,7 +7,8 @@ class TemasController < ApplicationController
   # GET /temas
   # GET /temas.json
   def index
-    @temas = Tema.all
+    #@temas = Tema.all
+    @temas = Tema.where(:disponivel => '1').all
   end
 
   # GET /temas/1

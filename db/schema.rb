@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525181654) do
+ActiveRecord::Schema.define(version: 20150605160447) do
 
   create_table "assuntos", force: :cascade do |t|
     t.string   "nome_assunto"
     t.text     "descricao"
     t.string   "link_image"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "disponivel",   default: 0
   end
 
   add_index "assuntos", ["user_id"], name: "index_assuntos_on_user_id"
@@ -30,8 +31,9 @@ ActiveRecord::Schema.define(version: 20150525181654) do
     t.text     "dica"
     t.integer  "tema_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "disponivel", default: 0
   end
 
   add_index "questaos", ["tema_id"], name: "index_questaos_on_tema_id"
@@ -52,8 +54,9 @@ ActiveRecord::Schema.define(version: 20150525181654) do
     t.string   "nome_tema"
     t.integer  "assunto_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "disponivel", default: 0
   end
 
   add_index "temas", ["assunto_id"], name: "index_temas_on_assunto_id"

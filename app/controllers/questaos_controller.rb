@@ -7,7 +7,8 @@ class QuestaosController < ApplicationController
   # GET /questaos
   # GET /questaos.json
   def index
-    @questaos = Questao.all
+        #@questaos = Questao.all
+    @questaos = Questao.where(:disponivel => '1').all
   end
 
   # GET /questaos/1
