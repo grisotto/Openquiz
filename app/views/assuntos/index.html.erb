@@ -1,22 +1,30 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
 
 <h1>Assuntos Cadastrados</h1>
 
 <h5>Escolha algum assunto especifico que deseja estudar!</h5>
+<div id="main-container" class="container">
+   <div class="row">
 
-<table>
- <% @assuntos.each do |assunto| %>    
-<tr>
-<th><br><%= assunto.nome_assunto %></th>
-</tr>
-<tr>
-<td><%=link_to image_tag(assunto.link_image_url(:thumb)), assunto_path(assunto) %></td>
-</tr>
-<tr>
-<td><%= assunto.descricao %></td>
-</tr>
-<% end %>
-</table>
+   <div class="col-xs-10">
+      <div class="row">
+        <div class=".col-xs-10 .col-sm-10">
+          <% @assuntos.each do |assunto| %>
+
+        <%=link_to image_tag(assunto.link_image_url(:thumb),:style =>"margin-top:10px;border-radius: 15px;border: 1px solid #4682B4;"), assunto_path(assunto) %>&nbsp;
+        
+          <% end %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</div>
 <br>
-
-<%= link_to 'Cadastrar Novo Assunto', new_assunto_path %>
+<%= link_to 'Cadastrar Novo Assunto', new_assunto_path,:class =>"btn btn-success" %>
