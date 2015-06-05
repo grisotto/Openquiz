@@ -21939,3 +21939,1476 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_navigation.html.erb (2.0ms)
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 124ms (Views: 123.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 11:36:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (68.0ms)
+  Rendered layouts/_navigation_links.html.erb (4.2ms)
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 5499ms (Views: 5460.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-06-05 11:36:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (118.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 273ms (Views: 252.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-06-05 11:36:30 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFxUeQJInTK7gyvf+fFDujXugyR0kBaP8sQNiDv4sf07Ywp2gf7SffgN1jn0DIoLCih/57F5qxj2XQywi1kRWg==", "user"=>{"email"=>"rafael@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rafael@hotmail.com"]]
+Completed 401 Unauthorized in 245ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFxUeQJInTK7gyvf+fFDujXugyR0kBaP8sQNiDv4sf07Ywp2gf7SffgN1jn0DIoLCih/57F5qxj2XQywi1kRWg==", "user"=>{"email"=>"rafael@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 276ms (Views: 203.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-06-05 11:36:36 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"78wcYGY7TebKYuPa+QVOYhP7Tl1FCIeY/6dhQLcE+wy880Jv5Y0CqYnsHjz0+IfTLD2ynoDhOg/7PmB4B6Vbqw==", "user"=>{"email"=>"rafael@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "rafael@hotmail.com"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-06-01 04:21:27.204858"], ["current_sign_in_at", "2015-06-05 14:36:36.653170"], ["last_sign_in_ip", "192.168.1.34"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 11], ["updated_at", "2015-06-05 14:36:36.654363"], ["id", 2]]
+  [1m[35m (138.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 243ms (ActiveRecord: 139.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 11:36:36 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 167ms (Views: 165.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 11:36:45 -0300
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered assuntos/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 130ms (Views: 127.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assuntos/3" for 127.0.0.1 at 2015-06-05 11:36:52 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 3]]
+  Rendered assuntos/show.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 214ms (Views: 194.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 11:37:32 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (181.9ms)
+  Rendered assuntos/new.html.erb within layouts/application (183.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 416ms (Views: 414.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 11:37:45 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1yjsJhSr5yna9AeVcTTfQRKzNafYMAyuiCbk8GjOyXUNb39lJ2X6QkbVjxYCDLUjphawLZNHBweNwhM+gr7cQ==", "assunto"=>{"nome_assunto"=>"teste ahsiduhas", "descricao"=>"haisudhiaushdiuas", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x00000008f6cbf8 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-6912-1mpvtnm.jpg>, @original_filename="LedZeppelin-Banner.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"LedZeppelin-Banner.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "teste ahsiduhas"], ["descricao", "haisudhiaushdiuas"], ["link_image", "LedZeppelin-Banner.jpg"], ["user_id", 2], ["created_at", "2015-06-05 14:37:45.402578"], ["updated_at", "2015-06-05 14:37:45.402578"]]
+  [1m[36m (191.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/4
+Completed 302 Found in 410ms (ActiveRecord: 192.4ms)
+
+
+Started GET "/assuntos/4" for 127.0.0.1 at 2015-06-05 11:37:45 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 4]]
+  Rendered assuntos/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 128ms (Views: 125.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 11:37:57 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assuntos/4" for 127.0.0.1 at 2015-06-05 11:38:21 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 4]]
+  Rendered assuntos/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 186ms (Views: 183.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-05 11:38:35 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (77.6ms)
+Completed 200 OK in 323ms (Views: 321.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-05 11:38:35 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (9.8ms)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-05 11:38:38 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (7.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (23.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (45.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.8ms)
+Completed 200 OK in 128ms (Views: 125.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/m/Assunto/i/4" for 127.0.0.1 at 2015-06-05 11:38:45 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (5.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 4]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (65.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (71.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.5ms)
+Completed 200 OK in 134ms (Views: 130.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-05 11:38:56 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (4.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (15.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.9ms)
+Completed 200 OK in 73ms (Views: 70.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-05 11:39:06 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (4.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (14.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (9.0ms)
+Completed 200 OK in 108ms (Views: 104.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-05 11:39:06 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (9.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (21.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.3ms)
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/m/Assunto/i/3" for 127.0.0.1 at 2015-06-05 11:39:09 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (2.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 3]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? LIMIT 5  [["assunto_id", 3]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (6.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (62.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (65.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.8ms)
+Completed 200 OK in 130ms (Views: 126.0ms | ActiveRecord: 0.5ms)
+  [1m[36mQuestao Load (2.1ms)[0m  [1mSELECT "questaos".* FROM "questaos"[0m
+  [1m[35mSQL (151.2ms)[0m  DELETE FROM "questaos"
+  [1m[36mQuestao Load (0.4ms)[0m  [1mSELECT "questaos".* FROM "questaos"[0m
+  [1m[35mSQL (119.2ms)[0m  DELETE FROM "temas"
+  [1m[36mSQL (129.1ms)[0m  [1mDELETE FROM "assuntos"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 11:41:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (16.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (14.6ms)
+  Rendered layouts/_navigation.html.erb (15.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 353ms (Views: 344.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:15:45 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 127ms (Views: 124.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:15:48 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (106.5ms)
+  Rendered assuntos/new.html.erb within layouts/application (107.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 263ms (Views: 256.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:17:30 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SgXMKX/Q1ma4A9LiLPt8SfRcuZjMq3xcmdxmrYCBpbq1bNJkcx/uExZzVMAhN53gfo4vjuWGoHI9y/Vyuyhl7g==", "assunto"=>{"nome_assunto"=>"Introdução a ciência da computação", "descricao"=>"Introduzir o aluno no assunto de Ciência da Computação apresentando seus conceitos mais básicos, principais segmentações e aplicações, além de uma visão geral de sua história. Os tópicos abordados pretendem servir como introduções específicas para cada tema desenvolvido no curso.", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x00000007d89eb8 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-lq12n6.jpg>, @original_filename="ciencia da computacao.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"ciencia da computacao.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Introdução a ciência da computação"], ["descricao", "Introduzir o aluno no assunto de Ciência da Computação apresentando seus conceitos mais básicos, principais segmentações e aplicações, além de uma visão geral de sua história. Os tópicos abordados pretendem servir como introduções específicas para cada tema desenvolvido no curso."], ["link_image", "ciencia_da_computacao.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:17:30.394760"], ["updated_at", "2015-06-05 15:17:30.394760"]]
+  [1m[36m (419.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/5
+Completed 302 Found in 580ms (ActiveRecord: 419.9ms)
+
+
+Started GET "/assuntos/5" for 127.0.0.1 at 2015-06-05 12:17:30 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mTema Load (0.3ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 5]]
+  Rendered assuntos/show.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 176ms (Views: 171.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:17:38 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 144ms (Views: 142.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:17:45 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (53.0ms)
+  Rendered assuntos/new.html.erb within layouts/application (53.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 204ms (Views: 202.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:19:52 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gdW9vVPYVYk+V2K0u1JKDmgJhOi4Mw0SKq3sHNJtTBJ+vKPwXxdt/JAn5Ja2nqun4tsS/pEe0TyOun/D6cSMRg==", "assunto"=>{"nome_assunto"=>"Arquitetura de computadores", "descricao"=>"Esta disciplina tem como objetivo fornecer ao estudante os fundamentos da Arquitetura de Computadores, desde os seus modelos primordiais aos modelos mais avançados, especializando-se no estudo da Arquitetura de Von Neumman.", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x00000007ec4210 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-1flv1qs.jpg>, @original_filename="architecture.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"architecture.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Arquitetura de computadores"], ["descricao", "Esta disciplina tem como objetivo fornecer ao estudante os fundamentos da Arquitetura de Computadores, desde os seus modelos primordiais aos modelos mais avançados, especializando-se no estudo da Arquitetura de Von Neumman."], ["link_image", "architecture.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:19:52.318723"], ["updated_at", "2015-06-05 15:19:52.318723"]]
+  [1m[36m (252.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/6
+Completed 302 Found in 358ms (ActiveRecord: 252.4ms)
+
+
+Started GET "/assuntos/6" for 127.0.0.1 at 2015-06-05 12:19:52 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 6]]
+  Rendered assuntos/show.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 178ms (Views: 175.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:19:57 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 159ms (Views: 157.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:20:04 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (54.1ms)
+  Rendered assuntos/new.html.erb within layouts/application (54.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 210ms (Views: 208.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:22:01 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"95QjmAdqaw8HAN1PkY8R8FZAChgVdanM0XZwQtYLFUAI/T3VC6VTeqlwW22cQ/BZ3JKcDjxYdeJ1YeOd7aLVFA==", "assunto"=>{"nome_assunto"=>"Sistemas Operacionais 1", "descricao"=>"Um sistema operacional ou ainda software de sistema é um programa ou um conjunto de programas cuja função é gerenciar os recursos do sistema (definir qual programa recebe atenção do processador, gerenciar memória, criar um sistema de arquivos, etc.), fornecendo uma interface entre o computador e o usuário. Embora possa ser executado imediatamente após a máquina ser ligada, a maioria dos computadores pessoais de hoje o executa através de outro programa armazenado em uma memória não-volátil ROM chamado BIOS num processo chamado \"bootstrapping\", conceito em inglês usado para designar processos auto-sustentáveis, ou seja, capazes de prosseguirem sem ajuda externa. Após executar testes e iniciar os componentes da máquina (monitores, discos, etc), o BIOS procura pelo sistema operacional em alguma unidade de armazenamento, geralmente o Disco Rígido, e a partir daí, o sistema operacional \"toma\" o controle da máquina. O sistema operacional reveza sua execução com a de outros programas, como se estivesse vigiando, controlando e orquestrando todo o processo computacional.", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x00000007121978 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-p8yxxg.jpg>, @original_filename="PC_SO(1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"PC_SO(1).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Sistemas Operacionais 1"], ["descricao", "Um sistema operacional ou ainda software de sistema é um programa ou um conjunto de programas cuja função é gerenciar os recursos do sistema (definir qual programa recebe atenção do processador, gerenciar memória, criar um sistema de arquivos, etc.), fornecendo uma interface entre o computador e o usuário. Embora possa ser executado imediatamente após a máquina ser ligada, a maioria dos computadores pessoais de hoje o executa através de outro programa armazenado em uma memória não-volátil ROM chamado BIOS num processo chamado \"bootstrapping\", conceito em inglês usado para designar processos auto-sustentáveis, ou seja, capazes de prosseguirem sem ajuda externa. Após executar testes e iniciar os componentes da máquina (monitores, discos, etc), o BIOS procura pelo sistema operacional em alguma unidade de armazenamento, geralmente o Disco Rígido, e a partir daí, o sistema operacional \"toma\" o controle da máquina. O sistema operacional reveza sua execução com a de outros programas, como se estivesse vigiando, controlando e orquestrando todo o processo computacional."], ["link_image", "PC_SO_1_.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:22:01.427983"], ["updated_at", "2015-06-05 15:22:01.427983"]]
+  [1m[36m (172.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/7
+Completed 302 Found in 305ms (ActiveRecord: 173.0ms)
+
+
+Started GET "/assuntos/7" for 127.0.0.1 at 2015-06-05 12:22:01 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 7]]
+  Rendered assuntos/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 161ms (Views: 158.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:22:05 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (129.2ms)
+  Rendered questaos/new.html.erb within layouts/application (130.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 320ms (Views: 306.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:22:06 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 160ms (Views: 158.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:22:10 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (66.9ms)
+  Rendered assuntos/new.html.erb within layouts/application (67.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 229ms (Views: 227.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:22:20 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A5GBlAxAtnSERXQym9RCxQ3LFwEli5VZRFbEnE4V9pj8+J/ZAI+OASo18hCWGKNshxmBFwymSXfgQVdDdbw2zA==", "assunto"=>{"nome_assunto"=>"Sistemas Operacionais 2", "descricao"=>"Um sistema operacional ou ainda software de sistema é um programa ou um conjunto de programas cuja função é gerenciar os recursos do sistema (definir qual programa recebe atenção do processador, gerenciar memória, criar um sistema de arquivos, etc.), fornecendo uma interface entre o computador e o usuário. Embora possa ser executado imediatamente após a máquina ser ligada, a maioria dos computadores pessoais de hoje o executa através de outro programa armazenado em uma memória não-volátil ROM chamado BIOS num processo chamado \"bootstrapping\", conceito em inglês usado para designar processos auto-sustentáveis, ou seja, capazes de prosseguirem sem ajuda externa. Após executar testes e iniciar os componentes da máquina (monitores, discos, etc), o BIOS procura pelo sistema operacional em alguma unidade de armazenamento, geralmente o Disco Rígido, e a partir daí, o sistema operacional \"toma\" o controle da máquina. O sistema operacional reveza sua execução com a de outros programas, como se estivesse vigiando, controlando e orquestrando todo o processo computacional.", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x00000007c6e7e0 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-1fahtz0.jpg>, @original_filename="PC_SO(1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"PC_SO(1).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Sistemas Operacionais 2"], ["descricao", "Um sistema operacional ou ainda software de sistema é um programa ou um conjunto de programas cuja função é gerenciar os recursos do sistema (definir qual programa recebe atenção do processador, gerenciar memória, criar um sistema de arquivos, etc.), fornecendo uma interface entre o computador e o usuário. Embora possa ser executado imediatamente após a máquina ser ligada, a maioria dos computadores pessoais de hoje o executa através de outro programa armazenado em uma memória não-volátil ROM chamado BIOS num processo chamado \"bootstrapping\", conceito em inglês usado para designar processos auto-sustentáveis, ou seja, capazes de prosseguirem sem ajuda externa. Após executar testes e iniciar os componentes da máquina (monitores, discos, etc), o BIOS procura pelo sistema operacional em alguma unidade de armazenamento, geralmente o Disco Rígido, e a partir daí, o sistema operacional \"toma\" o controle da máquina. O sistema operacional reveza sua execução com a de outros programas, como se estivesse vigiando, controlando e orquestrando todo o processo computacional."], ["link_image", "PC_SO_1_.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:22:20.242171"], ["updated_at", "2015-06-05 15:22:20.242171"]]
+  [1m[36m (225.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/8
+Completed 302 Found in 340ms (ActiveRecord: 225.6ms)
+
+
+Started GET "/assuntos/8" for 127.0.0.1 at 2015-06-05 12:22:20 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 8]]
+  Rendered assuntos/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 156ms (Views: 153.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:22:24 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 179ms (Views: 177.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:22:27 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (61.9ms)
+  Rendered assuntos/new.html.erb within layouts/application (62.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 251ms (Views: 249.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:25:02 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ujk12r6pEsyQiJdm5wo4Hu8M8lCGT31pNBaucVGJI3ZFUCuXsmYquT74EUTqxtm3Zd5kRq9ioUeQAT2uaiDjIg==", "assunto"=>{"nome_assunto"=>"Projeto e Análise de Algoritmos", "descricao"=>" A análise de algoritmos estuda a correção e o desempenho de algoritmos.  Em outras palavras, a análise de algoritmos procura respostas para perguntas do seguinte tipo:  \"Este algoritmo resolve o meu problema?  Quanto tempo o algoritmo consome para processar uma 'entrada' de tamanho n?\".  (A resposta à segunda pergunta é necessariamente um tanto grosseira, algo como \"o consumo de tempo é proporcional a n² log n no pior caso\".)\r\n\r\nAlém disso, a análise de algoritmos estuda certos paradigmas (como divisão-e-conquista, programação dinâmica, gula, busca local, aproximação, etc.) que se mostraram úteis na criação de algoritmos para vários problemas computacionais.\r\n\r\nA análise de algoritmos foi inventada e difundida por D.E. Knuth (veja a série de livros The Art of Computer Programming). Knuth foi o pai da ideia de prever o tempo de execução e o consumo de espaço de um algoritmo. ", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x000000083e15e0 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-aignza.jpg>, @original_filename="KnuthAtOpenContentAlliance.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"KnuthAtOpenContentAlliance.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Projeto e Análise de Algoritmos"], ["descricao", " A análise de algoritmos estuda a correção e o desempenho de algoritmos.  Em outras palavras, a análise de algoritmos procura respostas para perguntas do seguinte tipo:  \"Este algoritmo resolve o meu problema?  Quanto tempo o algoritmo consome para processar uma 'entrada' de tamanho n?\".  (A resposta à segunda pergunta é necessariamente um tanto grosseira, algo como \"o consumo de tempo é proporcional a n² log n no pior caso\".)\r\n\r\nAlém disso, a análise de algoritmos estuda certos paradigmas (como divisão-e-conquista, programação dinâmica, gula, busca local, aproximação, etc.) que se mostraram úteis na criação de algoritmos para vários problemas computacionais.\r\n\r\nA análise de algoritmos foi inventada e difundida por D.E. Knuth (veja a série de livros The Art of Computer Programming). Knuth foi o pai da ideia de prever o tempo de execução e o consumo de espaço de um algoritmo. "], ["link_image", "KnuthAtOpenContentAlliance.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:25:02.489811"], ["updated_at", "2015-06-05 15:25:02.489811"]]
+  [1m[36m (381.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/9
+Completed 302 Found in 492ms (ActiveRecord: 381.8ms)
+
+
+Started GET "/assuntos/9" for 127.0.0.1 at 2015-06-05 12:25:02 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mTema Load (0.0ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 9]]
+  Rendered assuntos/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 166ms (Views: 164.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:25:05 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 166ms (Views: 164.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-05 12:25:08 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (68.8ms)
+  Rendered assuntos/new.html.erb within layouts/application (69.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 292ms (Views: 290.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-05 12:26:32 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OzZY9xdb5OpNUmnHpJnWYSBkNXadoD10S5O7rKRBkLrEX0a6G5Tcn+Mi7+WpVTfIqrajYLSN4VrvhChzn+hQ7g==", "assunto"=>{"nome_assunto"=>"Banco de Dados", "descricao"=>"Bancos de dados são coleções organizadas de dados que se relacionam de forma a criar algum sentido (Informação) e dar mais eficiência durante uma pesquisa ou estudo. São de vital importância para empresas e há duas décadas se tornaram a principal peça dos sistemas de informação. Normalmente existem por vários anos sem alterações em sua estrutura.", "link_image"=>#<ActionDispatch::Http::UploadedFile:0x000000080be408 @tempfile=#<Tempfile:/tmp/RackMultipart20150605-7292-zlwofh.jpg>, @original_filename="Database_iStock_000020783950XSmall_0.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"assunto[link_image]\"; filename=\"Database_iStock_000020783950XSmall_0.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "assuntos" ("nome_assunto", "descricao", "link_image", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome_assunto", "Banco de Dados"], ["descricao", "Bancos de dados são coleções organizadas de dados que se relacionam de forma a criar algum sentido (Informação) e dar mais eficiência durante uma pesquisa ou estudo. São de vital importância para empresas e há duas décadas se tornaram a principal peça dos sistemas de informação. Normalmente existem por vários anos sem alterações em sua estrutura."], ["link_image", "Database_iStock_000020783950XSmall_0.jpg"], ["user_id", 2], ["created_at", "2015-06-05 15:26:32.887993"], ["updated_at", "2015-06-05 15:26:32.887993"]]
+  [1m[36m (159.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assuntos/10
+Completed 302 Found in 314ms (ActiveRecord: 159.7ms)
+
+
+Started GET "/assuntos/10" for 127.0.0.1 at 2015-06-05 12:26:33 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 10]]
+  Rendered assuntos/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 175ms (Views: 173.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 12:26:36 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 164ms (Views: 163.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:26:39 -0300
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered assuntos/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 157ms (Views: 154.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-05 12:26:46 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (29.7ms)
+Completed 200 OK in 106ms (Views: 103.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-05 12:26:46 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (10.6ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-05 12:27:07 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (13.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (6.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (44.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.3ms)
+Completed 200 OK in 109ms (Views: 105.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/m/User" for 127.0.0.1 at 2015-06-05 12:29:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"User"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "users"."id") FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  DISTINCT "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (17.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (14.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (52.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (13.3ms)
+Completed 200 OK in 366ms (Views: 309.9ms | ActiveRecord: 1.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "temas" ("nome_tema", "assunto_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome_tema", "Historia"], ["assunto_id", 5], ["user_id", 2], ["created_at", "2015-06-05 15:31:45.571626"], ["updated_at", "2015-06-05 15:31:45.571626"]]
+  [1m[35m (131.4ms)[0m  commit transaction
+  [1m[35mTema Load (0.3ms)[0m  SELECT "temas".* FROM "temas"
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 12:32:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (16.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (14.4ms)
+  Rendered layouts/_navigation.html.erb (15.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 352ms (Views: 343.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:32:43 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos"
+  Rendered assuntos/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 138ms (Views: 136.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assuntos/5" for 127.0.0.1 at 2015-06-05 12:32:44 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mTema Load (0.3ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 5]]
+  Rendered assuntos/show.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 183ms (Views: 169.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/temas/9" for 127.0.0.1 at 2015-06-05 12:32:47 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?[0m  [["tema_id", 9]]
+  Rendered temas/show.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 161ms (Views: 158.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 12:38:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered assuntos/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 381ms (Views: 347.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assuntos/6" for 127.0.0.1 at 2015-06-05 12:38:08 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 6]]
+  Rendered assuntos/show.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 162ms (Views: 158.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:38:10 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (141.2ms)
+  Rendered questaos/new.html.erb within layouts/application (142.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 302ms (Views: 290.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assuntos/temas" for 127.0.0.1 at 2015-06-05 12:38:19 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"temas"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.0ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound - Couldn't find Assunto with 'id'=temas:
+  activerecord (4.2.1) lib/active_record/core.rb:155:in `find'
+  app/controllers/assuntos_controller.rb:76:in `set_assunto'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:432:in `block in make_lambda'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:145:in `block in halting_and_conditional'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `<main>'
+
+
+
+Started POST "/__better_errors/1f68d523455b69e7/variables" for 127.0.0.1 at 2015-06-05 12:38:19 -0300
+
+
+Started GET "/assuntos/6" for 127.0.0.1 at 2015-06-05 12:38:24 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 6]]
+  Rendered assuntos/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 147.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assuntos/6/temas" for 127.0.0.1 at 2015-06-05 12:38:27 -0300
+Processing by TemasController#index as HTML
+  Parameters: {"name_prefix"=>"assunto_", "assunto_id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered temas/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 148.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/temas/new" for 127.0.0.1 at 2015-06-05 12:38:34 -0300
+Processing by TemasController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered temas/_form.html.erb (52.3ms)
+  Rendered temas/new.html.erb within layouts/application (70.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 308ms (Views: 305.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/temas" for 127.0.0.1 at 2015-06-05 12:38:46 -0300
+Processing by TemasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iuBaIiXtYwE4mZ6m4i4V3lWz0/4Q/FDO/hCEhzbKYsh1iURvKSJbdJbpGITv4vR332FF6DnRjOBaBxdYDWOinA==", "tema"=>{"nome_tema"=>"Introdução", "assunto_id"=>"6"}, "commit"=>"Criar Tema"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "temas" ("nome_tema", "assunto_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nome_tema", "Introdução"], ["assunto_id", 6], ["user_id", 2], ["created_at", "2015-06-05 15:38:46.252039"], ["updated_at", "2015-06-05 15:38:46.252039"]]
+  [1m[36m (227.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/temas/10
+Completed 302 Found in 240ms (ActiveRecord: 228.2ms)
+
+
+Started GET "/temas/10" for 127.0.0.1 at 2015-06-05 12:38:46 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mQuestao Load (0.3ms)[0m  [1mSELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?[0m  [["tema_id", 10]]
+  Rendered temas/show.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 257ms (Views: 253.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:39:14 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (151.0ms)
+  Rendered questaos/new.html.erb within layouts/application (151.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 410ms (Views: 407.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:40:45 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pcSTWqQqnyI5ffiQSnApX5jXJ+Nbb+jYnX6zydfV2kJarY0XqOWnV5cNfrJHvMj2EgWx9XJCNPY5aSAW7HwaFg==", "questao"=>{"pergunta"=>"Qual a diferença entre os termos 'arqutetura' e 'organização' de computadores?", "resposta"=>"A diferença é que arquitetura é ter ou não uma funcionalidade e já organização é como ela é feita.", "dica"=>"", "tema_id"=>"10"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (89.6ms)
+  Rendered questaos/new.html.erb within layouts/application (90.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 259ms (Views: 251.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:40:57 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"75vpx84c2HQzEYiB4omifwLfHkGnup1n9Jv216kdUscQ8veKwtPgAZ1hDqPvRUPWiA2IV46XQUlQjGUIkrSSkw==", "questao"=>{"pergunta"=>"Qual a diferença entre os termos 'arqutetura' e 'organização' de computadores?", "resposta"=>"A diferença é que arquitetura é ter ou não uma funcionalidade e já organização é como ela é feita.", "dica"=>"Não tenho dica!", "tema_id"=>"10"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["pergunta", "Qual a diferença entre os termos 'arqutetura' e 'organização' de computadores?"], ["resposta", "A diferença é que arquitetura é ter ou não uma funcionalidade e já organização é como ela é feita."], ["dica", "Não tenho dica!"], ["tema_id", 10], ["user_id", 2], ["created_at", "2015-06-05 15:40:57.656123"], ["updated_at", "2015-06-05 15:40:57.656123"]]
+  [1m[36m (143.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questaos/10
+Completed 302 Found in 151ms (ActiveRecord: 144.2ms)
+
+
+Started GET "/questaos/10" for 127.0.0.1 at 2015-06-05 12:40:57 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.2ms)[0m  [1mSELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered questaos/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 181ms (Views: 179.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questaos/" for 127.0.0.1 at 2015-06-05 12:41:15 -0300
+Processing by QuestaosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.2ms)[0m  SELECT "questaos".* FROM "questaos"
+  Rendered questaos/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 177ms (Views: 175.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:41:22 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (97.8ms)
+  Rendered questaos/new.html.erb within layouts/application (98.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 281ms (Views: 279.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:43:31 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FWDIdagdXNcbIWmHOC+knIoQLt7q0U/2RovJarzpux7qCdY4pNJkorVR76U140U1AMK4yMP8k9jinFq1h0B7Sg==", "questao"=>{"pergunta"=>"Define CISC E RISC?", "resposta"=>"CISC = Computador com instruções de estruturas complexas.\r\nRISC = Computador com instruções de estruturas reduzidas.", "dica"=>"Não tenho...", "tema_id"=>"10"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["pergunta", "Define CISC E RISC?"], ["resposta", "CISC = Computador com instruções de estruturas complexas.\r\nRISC = Computador com instruções de estruturas reduzidas."], ["dica", "Não tenho..."], ["tema_id", 10], ["user_id", 2], ["created_at", "2015-06-05 15:43:31.794115"], ["updated_at", "2015-06-05 15:43:31.794115"]]
+  [1m[35m (163.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/questaos/11
+Completed 302 Found in 171ms (ActiveRecord: 164.0ms)
+
+
+Started GET "/questaos/11" for 127.0.0.1 at 2015-06-05 12:43:32 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.1ms)[0m  SELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered questaos/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 165ms (Views: 163.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:44:35 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (110.7ms)
+  Rendered questaos/new.html.erb within layouts/application (111.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 276ms (Views: 274.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questaos/" for 127.0.0.1 at 2015-06-05 12:44:37 -0300
+Processing by QuestaosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.2ms)[0m  [1mSELECT "questaos".* FROM "questaos"[0m
+  Rendered questaos/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 149ms (Views: 146.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:44:39 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (98.3ms)
+  Rendered questaos/new.html.erb within layouts/application (98.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 270ms (Views: 268.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/temas/new" for 127.0.0.1 at 2015-06-05 12:44:43 -0300
+Processing by TemasController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered temas/_form.html.erb (57.1ms)
+  Rendered temas/new.html.erb within layouts/application (58.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 231ms (Views: 228.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/temas" for 127.0.0.1 at 2015-06-05 12:45:09 -0300
+Processing by TemasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tXkAGibtl3STRKIO02LHAwdpP3A8FPr91QPrBHjqnShKEB5XKiKvAT00JCzeriaqjbupZhU5JtNxFHjbQ0NdfA==", "tema"=>{"nome_tema"=>"Dividir para conquistar", "assunto_id"=>"9"}, "commit"=>"Criar Tema"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "temas" ("nome_tema", "assunto_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nome_tema", "Dividir para conquistar"], ["assunto_id", 9], ["user_id", 2], ["created_at", "2015-06-05 15:45:09.273343"], ["updated_at", "2015-06-05 15:45:09.273343"]]
+  [1m[36m (258.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/temas/11
+Completed 302 Found in 263ms (ActiveRecord: 259.0ms)
+
+
+Started GET "/temas/11" for 127.0.0.1 at 2015-06-05 12:45:09 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mQuestao Load (0.0ms)[0m  [1mSELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?[0m  [["tema_id", 11]]
+  Rendered temas/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 166.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:45:12 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (149.1ms)
+  Rendered questaos/new.html.erb within layouts/application (149.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 326ms (Views: 324.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:47:19 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jYV1S9MwmPI4lL+hsfnmsPfeITHCry3653BMu9lT38dXwuYI4P6FmaS1NyLCwYzSQ3uku4nYJlPilLt1MyPKw==", "questao"=>{"pergunta"=>"O teorema mestre sempre resolve as recorrências de algoritmos de dividir para conquistar?", "resposta"=>"Falso. O teorema mestre precisa que a quantidade de subproblemas, a, seja maior ou igual 1 e a divisão dos problemas por recursão, b, seja maior que 1.", "dica"=>"não tenho...", "tema_id"=>"11"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["pergunta", "O teorema mestre sempre resolve as recorrências de algoritmos de dividir para conquistar?"], ["resposta", "Falso. O teorema mestre precisa que a quantidade de subproblemas, a, seja maior ou igual 1 e a divisão dos problemas por recursão, b, seja maior que 1."], ["dica", "não tenho..."], ["tema_id", 11], ["user_id", 2], ["created_at", "2015-06-05 15:47:19.626667"], ["updated_at", "2015-06-05 15:47:19.626667"]]
+  [1m[36m (130.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questaos/12
+Completed 302 Found in 136ms (ActiveRecord: 131.2ms)
+
+
+Started GET "/questaos/12" for 127.0.0.1 at 2015-06-05 12:47:19 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered questaos/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 171ms (Views: 169.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:47:29 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.3ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (106.8ms)
+  Rendered questaos/new.html.erb within layouts/application (107.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 285ms (Views: 282.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:51:01 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k3cCLkiGXW5VivnniNJCBZV2MfxTovvfp63LRzfVithsHhxjREllG/v6f8WFHqOsH6Sn6nqPJ/EDuliYDHxKjA==", "questao"=>{"pergunta"=>"O que os algoritmos probabilísticos nós dizem?", "resposta"=>"O tempo esperado de execução de um algoritmo.", "dica"=>"Não tenho...", "tema_id"=>"11"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["pergunta", "O que os algoritmos probabilísticos nós dizem?"], ["resposta", "O tempo esperado de execução de um algoritmo."], ["dica", "Não tenho..."], ["tema_id", 11], ["user_id", 2], ["created_at", "2015-06-05 15:51:01.860582"], ["updated_at", "2015-06-05 15:51:01.860582"]]
+  [1m[35m (187.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/questaos/13
+Completed 302 Found in 192ms (ActiveRecord: 187.4ms)
+
+
+Started GET "/questaos/13" for 127.0.0.1 at 2015-06-05 12:51:02 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.1ms)[0m  SELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered questaos/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 165ms (Views: 162.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:51:28 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (91.5ms)
+  Rendered questaos/new.html.erb within layouts/application (92.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 256ms (Views: 254.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/temas/11" for 127.0.0.1 at 2015-06-05 12:51:30 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?[0m  [["tema_id", 11]]
+  Rendered temas/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 166ms (Views: 163.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/temas/new" for 127.0.0.1 at 2015-06-05 12:51:31 -0300
+Processing by TemasController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos"[0m
+  Rendered temas/_form.html.erb (40.0ms)
+  Rendered temas/new.html.erb within layouts/application (40.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 198ms (Views: 196.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/temas" for 127.0.0.1 at 2015-06-05 12:51:42 -0300
+Processing by TemasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ctC8n6QEa34U73WmSdCBHEjrL38qPYoXVq8/zHcH35qNuaLSqMtTC7qf84REHGC1wjm5aQMQVjnyuKwTTK4fzg==", "tema"=>{"nome_tema"=>"Introdução", "assunto_id"=>"10"}, "commit"=>"Criar Tema"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "temas" ("nome_tema", "assunto_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nome_tema", "Introdução"], ["assunto_id", 10], ["user_id", 2], ["created_at", "2015-06-05 15:51:42.857070"], ["updated_at", "2015-06-05 15:51:42.857070"]]
+  [1m[36m (216.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/temas/12
+Completed 302 Found in 222ms (ActiveRecord: 217.1ms)
+
+
+Started GET "/temas/12" for 127.0.0.1 at 2015-06-05 12:51:43 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?[0m  [["tema_id", 12]]
+  Rendered temas/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 261ms (Views: 258.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:51:47 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (147.2ms)
+  Rendered questaos/new.html.erb within layouts/application (148.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 409ms (Views: 406.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:52:40 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pneMJVS6+xBuXQaHpesxZm08ELpUGOpIqv3s8SSim6RZHpJoWHXDZcAtgKWoJ9DP5+6GrH01NmYO6n8uHwtb8A==", "questao"=>{"pergunta"=>"Acesso concorrente", "resposta"=>"Vários usuários podem acessar vários arquivos, sem sofrer danos, perda de performance ou quaisquer outras restrições.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["pergunta", "Acesso concorrente"], ["resposta", "Vários usuários podem acessar vários arquivos, sem sofrer danos, perda de performance ou quaisquer outras restrições."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:52:40.482451"], ["updated_at", "2015-06-05 15:52:40.482451"]]
+  [1m[36m (141.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questaos/14
+Completed 302 Found in 146ms (ActiveRecord: 141.8ms)
+
+
+Started GET "/questaos/14" for 127.0.0.1 at 2015-06-05 12:52:40 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 174ms (Views: 171.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:52:43 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (106.2ms)
+  Rendered questaos/new.html.erb within layouts/application (106.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 286ms (Views: 284.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:53:04 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"znc96iYz1u7/Qspm/zrRyurIxCNbWmCJHYK67X7qynAxHiOnKvzum1EyTETy9jBjYBpSNXJ3vKe5lSkyRUMKJA==", "questao"=>{"pergunta"=>"DBA", "resposta"=>"Administrador de Banco de dados.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (102.4ms)
+  Rendered questaos/new.html.erb within layouts/application (102.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 263ms (Views: 258.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:53:18 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CUJLneBBfdd9tedUmGn3KLvb7NunlZx/2x68qXA730n2K1XQ7I5FotPFYXaVpRaBMQl6zY64QFF/CS92S5IfHQ==", "questao"=>{"pergunta"=>"Defina DBA", "resposta"=>"Administrador de Banco de dados.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["pergunta", "Defina DBA"], ["resposta", "Administrador de Banco de dados."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:53:18.057559"], ["updated_at", "2015-06-05 15:53:18.057559"]]
+  [1m[35m (133.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/questaos/15
+Completed 302 Found in 138ms (ActiveRecord: 133.7ms)
+
+
+Started GET "/questaos/15" for 127.0.0.1 at 2015-06-05 12:53:18 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.1ms)[0m  SELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 218ms (Views: 215.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:53:22 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (113.0ms)
+  Rendered questaos/new.html.erb within layouts/application (114.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 285ms (Views: 281.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:53:53 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vajkFP26xDXS4UQIH7mWEiDC2dm+AlJ1evAZNNMN6sxCwfpZ8XX8QHyRwioSdXe7qhBPz5cvjlve54rr6KQqmA==", "questao"=>{"pergunta"=>"Defina DER", "resposta"=>"É uma maneira sistemática de descrever e definir um processo de negócio.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["pergunta", "Defina DER"], ["resposta", "É uma maneira sistemática de descrever e definir um processo de negócio."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:53:53.164090"], ["updated_at", "2015-06-05 15:53:53.164090"]]
+  [1m[36m (148.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questaos/16
+Completed 302 Found in 154ms (ActiveRecord: 149.1ms)
+
+
+Started GET "/questaos/16" for 127.0.0.1 at 2015-06-05 12:53:53 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 178ms (Views: 176.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:53:57 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (94.2ms)
+  Rendered questaos/new.html.erb within layouts/application (94.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 259ms (Views: 257.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:54:21 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4bhJUjdgQnfBi8ozywGA410t0HH5d4nq+yXYPXmKMVoe0VcfO696Am/7TBHGzWFK1/9GZ9BaVcRfMkviQiPxDg==", "questao"=>{"pergunta"=>"Dados persistentes", "resposta"=>"Dados gravados que permanecem igausi enquanto não forem alterados.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["pergunta", "Dados persistentes"], ["resposta", "Dados gravados que permanecem igausi enquanto não forem alterados."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:54:21.148900"], ["updated_at", "2015-06-05 15:54:21.148900"]]
+  [1m[35m (154.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/questaos/17
+Completed 302 Found in 159ms (ActiveRecord: 154.5ms)
+
+
+Started GET "/questaos/17" for 127.0.0.1 at 2015-06-05 12:54:21 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.1ms)[0m  SELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 156ms (Views: 153.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:54:22 -0300
+Processing by QuestaosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  Rendered questaos/_form.html.erb (92.0ms)
+  Rendered questaos/new.html.erb within layouts/application (92.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 262ms (Views: 260.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:54:51 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ICbdhG3XffVK8o2kVOsoXo5prn2PMRc3Mq5B4h4F6Ub6YU7HXhlgntbTBScn00I8Oswr98RGHJ43SrYs9HX8Q==", "questao"=>{"pergunta"=>"Entidade", "resposta"=>"É uma representação de um conjunto de dados sobre determinado domínio.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["pergunta", "Entidade"], ["resposta", "É uma representação de um conjunto de dados sobre determinado domínio."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:54:51.732512"], ["updated_at", "2015-06-05 15:54:51.732512"]]
+  [1m[36m (154.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questaos/18
+Completed 302 Found in 159ms (ActiveRecord: 154.9ms)
+
+
+Started GET "/questaos/18" for 127.0.0.1 at 2015-06-05 12:54:51 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.1ms)[0m  [1mSELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 165ms (Views: 163.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questaos/new" for 127.0.0.1 at 2015-06-05 12:54:53 -0300
+Processing by QuestaosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas"
+  Rendered questaos/_form.html.erb (112.3ms)
+  Rendered questaos/new.html.erb within layouts/application (112.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 305ms (Views: 303.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questaos" for 127.0.0.1 at 2015-06-05 12:55:17 -0300
+Processing by QuestaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BX3BB4y74BKXrMCZCAZcBdjWDOfDgNOiE7KBXMqvB5z6FN9KgHTYZzncRrsFyr2sUgSa8eqtD4y3pRKD8QbHyA==", "questao"=>{"pergunta"=>"Defina Integridade", "resposta"=>"Garante a qualidade dos dados a serem salvos no banco de dados.", "dica"=>"Não tenho...", "tema_id"=>"12"}, "commit"=>"Criar Questao"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "questaos" ("pergunta", "resposta", "dica", "tema_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["pergunta", "Defina Integridade"], ["resposta", "Garante a qualidade dos dados a serem salvos no banco de dados."], ["dica", "Não tenho..."], ["tema_id", 12], ["user_id", 2], ["created_at", "2015-06-05 15:55:17.343296"], ["updated_at", "2015-06-05 15:55:17.343296"]]
+  [1m[35m (145.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/questaos/19
+Completed 302 Found in 150ms (ActiveRecord: 146.0ms)
+
+
+Started GET "/questaos/19" for 127.0.0.1 at 2015-06-05 12:55:17 -0300
+Processing by QuestaosController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mQuestao Load (0.1ms)[0m  SELECT  "questaos".* FROM "questaos" WHERE "questaos"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36mTema Load (0.1ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered questaos/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 167ms (Views: 165.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 12:55:20 -0300
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (3.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 164ms (Views: 162.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 12:55:31 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 169ms (Views: 167.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questaos" for 127.0.0.1 at 2015-06-05 12:55:33 -0300
+Processing by QuestaosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mQuestao Load (0.2ms)[0m  [1mSELECT "questaos".* FROM "questaos"[0m
+  Rendered questaos/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 146.8ms | ActiveRecord: 0.3ms)
