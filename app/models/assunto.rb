@@ -1,4 +1,6 @@
 class Assunto < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :nome_assunto, use: :slugged
 belongs_to :user
 has_many :temas, :dependent => :destroy
 mount_uploader :link_image, ImageUploader
