@@ -78,7 +78,8 @@ def admin_only
   end
     # Use callbacks to share common setup or constraints between actions.
     def set_assunto
-      @assunto = Assunto.find(params[:id])
+      @assunto = Assunto.friendly.find(params[:id])
+      #@assunto = Assunto.find(params[:id])
       #Logica para nao deixar o usuario editar modulos com disponivel = 0
      # unless @assunto.disponivel == 1
       #    redirect_to :back, :alert => "Access denied."

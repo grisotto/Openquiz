@@ -1,4 +1,6 @@
 class Tema < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :nome_tema, use: :slugged
 belongs_to :user
 belongs_to :assunto
 has_many :questaos, :dependent => :destroy

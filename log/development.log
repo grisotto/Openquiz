@@ -28084,3 +28084,514 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_navigation.html.erb (10.3ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 219ms (Views: 217.3ms | ActiveRecord: 1.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFriendlyIdSlugs (20150605174003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "friendly_id_slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150605174003"]]
+  [1m[35m (165.5ms)[0m  commit transaction
+Migrating to Gerarslug2 (20150605174528)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "assuntos" ADD "slug" varchar
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "temas" ADD "slug" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150605174528"]]
+  [1m[36m (121.8ms)[0m  [1mcommit transaction[0m
+Migrating to Gerarslug3 (20150605175258)
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_assuntos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_assuntos_on_user_id' AND type='index'
+
+  [1m[36m (143.7ms)[0m  [1mCREATE UNIQUE INDEX "index_assuntos_on_slug" ON "assuntos" ("slug")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_temas_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_temas_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_temas_on_assunto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_temas_on_assunto_id' AND type='index'
+[0m
+  [1m[35m (154.8ms)[0m  CREATE UNIQUE INDEX "index_temas_on_slug" ON "temas" ("slug")
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150605175258"]]
+  [1m[36m (132.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_assuntos_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_assuntos_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_assuntos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_assuntos_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questaos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questaos_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questaos_on_tema_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questaos_on_tema_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questaousers_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questaousers_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questaousers_on_questao_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questaousers_on_questao_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_temas_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_temas_on_slug' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_temas_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_temas_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_temas_on_assunto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_temas_on_assunto_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mAssunto Load (0.5ms)[0m  SELECT  "assuntos".* FROM "assuntos"  ORDER BY "assuntos"."id" ASC LIMIT 1000
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT  "temas".* FROM "temas"  ORDER BY "temas"."id" ASC LIMIT 1000[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mTema Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 9) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "historia"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "historia"], ["updated_at", "2015-06-05 19:53:08.372539"], ["id", 9]]
+  [1m[36m (151.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 10) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "introducao"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "introducao"], ["updated_at", "2015-06-05 19:53:08.527536"], ["id", 10]]
+  [1m[36m (143.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 11) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "dividir-para-conquistar"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "dividir-para-conquistar"], ["updated_at", "2015-06-05 19:53:08.673974"], ["id", 11]]
+  [1m[36m (141.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 12) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "introducao"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "introducao-bc158221-43bd-46f7-a0c1-c80ed028ff33"], ["updated_at", "2015-06-05 19:53:08.819109"], ["id", 12]]
+  [1m[36m (141.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 13) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "vai-aparecer"], ["updated_at", "2015-06-05 19:53:08.963446"], ["id", 13]]
+  [1m[36m (353.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 14) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-user"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "vai-aparecer-user"], ["updated_at", "2015-06-05 19:53:09.319600"], ["id", 14]]
+  [1m[36m (119.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTema Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "temas" WHERE ("temas"."id" != 15) AND "temas"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-2"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "temas" SET "slug" = ?, "updated_at" = ? WHERE "temas"."id" = ?  [["slug", "vai-aparecer-2"], ["updated_at", "2015-06-05 19:53:09.441948"], ["id", 15]]
+  [1m[36m (142.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mAssunto Load (0.3ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mTema Load (0.4ms)[0m  [1mSELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTema Load (0.4ms)[0m  [1mSELECT "temas".* FROM "temas"[0m
+  [1m[35mAssunto Load (0.8ms)[0m  SELECT  "assuntos".* FROM "assuntos"  ORDER BY "assuntos"."id" ASC LIMIT 1000
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos"  ORDER BY "assuntos"."id" ASC LIMIT 1000[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 16:57:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (20.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (15.1ms)
+  Rendered layouts/_navigation.html.erb (15.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 350ms (Views: 340.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 16:57:05 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 128.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assuntos/7" for 127.0.0.1 at 2015-06-05 16:57:09 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1  [["slug", "7"]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mTema Load (0.2ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 7]]
+  Rendered assuntos/show.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 164ms (Views: 159.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assuntos/9" for 127.0.0.1 at 2015-06-05 16:57:14 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1  [["slug", "9"]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 9]]
+  Rendered assuntos/show.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 207ms (Views: 201.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/temas/dividir-para-conquistar" for 127.0.0.1 at 2015-06-05 16:57:17 -0300
+Processing by TemasController#show as HTML
+  Parameters: {"id"=>"dividir-para-conquistar"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTema Load (0.3ms)[0m  SELECT  "temas".* FROM "temas" WHERE "temas"."slug" = ?  ORDER BY "temas"."id" ASC LIMIT 1  [["slug", "dividir-para-conquistar"]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mQuestao Load (0.3ms)[0m  SELECT "questaos".* FROM "questaos" WHERE "questaos"."tema_id" = ?  [["tema_id", 11]]
+  Rendered temas/show.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 212ms (Views: 206.1ms | ActiveRecord: 1.3ms)
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos"  ORDER BY "assuntos"."id" ASC LIMIT 1000[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 5) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "introducao-a-ciencia-da-computacao"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "introducao-a-ciencia-da-computacao"], ["updated_at", "2015-06-05 20:00:01.055913"], ["id", 5]]
+  [1m[36m (214.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 6) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "arquitetura-de-computadores"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "arquitetura-de-computadores"], ["updated_at", "2015-06-05 20:00:01.275356"], ["id", 6]]
+  [1m[36m (140.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 7) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "sistemas-operacionais-1"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "sistemas-operacionais-1"], ["updated_at", "2015-06-05 20:00:01.419993"], ["id", 7]]
+  [1m[36m (140.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 8) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "sistemas-operacionais-2"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "sistemas-operacionais-2"], ["updated_at", "2015-06-05 20:00:01.564558"], ["id", 8]]
+  [1m[36m (141.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 9) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "projeto-e-analise-de-algoritmos"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "projeto-e-analise-de-algoritmos"], ["updated_at", "2015-06-05 20:00:01.709483"], ["id", 9]]
+  [1m[36m (174.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 10) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "banco-de-dados"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "banco-de-dados"], ["updated_at", "2015-06-05 20:00:01.887505"], ["id", 10]]
+  [1m[36m (130.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 11) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "teste-disponivel"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "teste-disponivel"], ["updated_at", "2015-06-05 20:00:02.021210"], ["id", 11]]
+  [1m[36m (152.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 12) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-apareer"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-apareer"], ["updated_at", "2015-06-05 20:00:02.177524"], ["id", 12]]
+  [1m[36m (140.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 13) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-user"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aparecer-user"], ["updated_at", "2015-06-05 20:00:02.321926"], ["id", 13]]
+  [1m[36m (119.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 14) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-2"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aparecer-2"], ["updated_at", "2015-06-05 20:00:02.444383"], ["id", 14]]
+  [1m[36m (153.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 15) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-3"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aparecer-3"], ["updated_at", "2015-06-05 20:00:02.600431"], ["id", 15]]
+  [1m[36m (241.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 16) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aparecer-4"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aparecer-4"], ["updated_at", "2015-06-05 20:00:02.845117"], ["id", 16]]
+  [1m[36m (119.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 17) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aprecer-5"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aprecer-5"], ["updated_at", "2015-06-05 20:00:02.967681"], ["id", 17]]
+  [1m[36m (119.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 18) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aprecer-6"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aprecer-6"], ["updated_at", "2015-06-05 20:00:03.090280"], ["id", 18]]
+  [1m[36m (119.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" != 19) AND "assuntos"."slug" = ? LIMIT 1[0m  [["slug", "vai-aprecer-7"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "assuntos" SET "slug" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["slug", "vai-aprecer-7"], ["updated_at", "2015-06-05 20:00:03.212879"], ["id", 19]]
+  [1m[36m (141.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-05 17:00:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?[0m  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 359ms (Views: 322.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assuntos/introducao-a-ciencia-da-computacao" for 127.0.0.1 at 2015-06-05 17:00:15 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"introducao-a-ciencia-da-computacao"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.4ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1[0m  [["slug", "introducao-a-ciencia-da-computacao"]]
+  [1m[35mTema Load (0.3ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 5]]
+  Rendered assuntos/show.html.erb within layouts/application (41.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 217ms (Views: 211.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-05 17:00:19 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 150.2ms | ActiveRecord: 0.3ms)
