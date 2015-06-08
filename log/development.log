@@ -28595,3 +28595,262 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_navigation.html.erb (2.0ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 151ms (Views: 150.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (253.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (207.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20150525180641)
+  [1m[35m (212.5ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (144.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (121.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180641')
+  [1m[36m (47.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddNameToUsers (20150525180643)
+  [1m[35m (211.4ms)[0m  ALTER TABLE `users` ADD `name` varchar(255)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180643')
+  [1m[36m (40.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddRoleToUsers (20150525180646)
+  [1m[35m (178.0ms)[0m  ALTER TABLE `users` ADD `role` int(11)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180646')
+  [1m[36m (31.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestaousers (20150525181631)
+  [1m[35m (65.2ms)[0m  CREATE TABLE `questaousers` (`id` int(11) auto_increment PRIMARY KEY, `entendimento` int(11), `questao_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_questaousers_on_questao_id`  (`questao_id`) ,  INDEX `index_questaousers_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (200.4ms)[0m  [1mALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_2cbae780ea`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (77.5ms)[0m  ALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_3c6e9e0fb3`
+FOREIGN KEY (`questao_id`)
+  REFERENCES `questaos` (`id`)
+
+Mysql2::Error: Can't create table 'appmysql_development.#sql-4c4_34' (errno: 150): ALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_3c6e9e0fb3`
+FOREIGN KEY (`questao_id`)
+  REFERENCES `questaos` (`id`)
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAssuntos (20150525181631)
+  [1m[35m (108.7ms)[0m  CREATE TABLE `assuntos` (`id` int(11) auto_increment PRIMARY KEY, `nome_assunto` varchar(255), `descricao` text, `link_image` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_assuntos_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (211.2ms)[0m  [1mALTER TABLE `assuntos` ADD CONSTRAINT `fk_rails_adcf545ded`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181631')[0m
+  [1m[35m (48.9ms)[0m  COMMIT
+Migrating to CreateQuestaousers (20150525181639)
+  [1m[36m (131.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (132.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20150525180641)
+  [1m[35m (61.8ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (131.3ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (121.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180641')
+  [1m[36m (27.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddNameToUsers (20150525180643)
+  [1m[35m (222.4ms)[0m  ALTER TABLE `users` ADD `name` varchar(255)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180643')
+  [1m[36m (42.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddRoleToUsers (20150525180646)
+  [1m[35m (322.3ms)[0m  ALTER TABLE `users` ADD `role` int(11)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180646')
+  [1m[36m (42.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAssuntos (20150525181631)
+  [1m[35m (76.5ms)[0m  CREATE TABLE `assuntos` (`id` int(11) auto_increment PRIMARY KEY, `nome_assunto` varchar(255), `descricao` text, `link_image` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_assuntos_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (255.3ms)[0m  [1mALTER TABLE `assuntos` ADD CONSTRAINT `fk_rails_adcf545ded`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181631')[0m
+  [1m[35m (41.8ms)[0m  COMMIT
+Migrating to CreateQuestaousers (20150525181639)
+  [1m[36m (76.3ms)[0m  [1mCREATE TABLE `questaousers` (`id` int(11) auto_increment PRIMARY KEY, `entendimento` int(11), `questao_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_questaousers_on_questao_id`  (`questao_id`) ,  INDEX `index_questaousers_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (200.3ms)[0m  ALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_2cbae780ea`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (89.2ms)[0m  [1mALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_3c6e9e0fb3`
+FOREIGN KEY (`questao_id`)
+  REFERENCES `questaos` (`id`)
+[0m
+Mysql2::Error: Can't create table 'appmysql_development.#sql-4c4_3f' (errno: 150): ALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_3c6e9e0fb3`
+FOREIGN KEY (`questao_id`)
+  REFERENCES `questaos` (`id`)
+
+  [1m[36m (90.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (210.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20150525180641)
+  [1m[35m (78.3ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (97.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (110.7ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180641')
+  [1m[36m (39.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddNameToUsers (20150525180643)
+  [1m[35m (168.4ms)[0m  ALTER TABLE `users` ADD `name` varchar(255)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180643')
+  [1m[36m (31.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddRoleToUsers (20150525180646)
+  [1m[35m (189.0ms)[0m  ALTER TABLE `users` ADD `role` int(11)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150525180646')
+  [1m[36m (32.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAssuntos (20150525181631)
+  [1m[35m (176.6ms)[0m  CREATE TABLE `assuntos` (`id` int(11) auto_increment PRIMARY KEY, `nome_assunto` varchar(255), `descricao` text, `link_image` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_assuntos_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (200.4ms)[0m  [1mALTER TABLE `assuntos` ADD CONSTRAINT `fk_rails_adcf545ded`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181631')[0m
+  [1m[35m (42.1ms)[0m  COMMIT
+Migrating to CreateTemas (20150525181647)
+  [1m[36m (87.5ms)[0m  [1mCREATE TABLE `temas` (`id` int(11) auto_increment PRIMARY KEY, `nome_tema` varchar(255), `assunto_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_temas_on_assunto_id`  (`assunto_id`) ,  INDEX `index_temas_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (244.7ms)[0m  ALTER TABLE `temas` ADD CONSTRAINT `fk_rails_20e6932d2a`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (278.2ms)[0m  [1mALTER TABLE `temas` ADD CONSTRAINT `fk_rails_2959d511fa`
+FOREIGN KEY (`assunto_id`)
+  REFERENCES `assuntos` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181647')[0m
+  [1m[35m (52.8ms)[0m  COMMIT
+Migrating to CreateQuestaos (20150525181654)
+  [1m[36m (87.1ms)[0m  [1mCREATE TABLE `questaos` (`id` int(11) auto_increment PRIMARY KEY, `pergunta` text, `resposta` text, `dica` text, `tema_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_questaos_on_tema_id`  (`tema_id`) ,  INDEX `index_questaos_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (200.3ms)[0m  ALTER TABLE `questaos` ADD CONSTRAINT `fk_rails_f8b8fd448d`
+FOREIGN KEY (`tema_id`)
+  REFERENCES `temas` (`id`)
+
+  [1m[36m (329.2ms)[0m  [1mALTER TABLE `questaos` ADD CONSTRAINT `fk_rails_16882ea958`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181654')[0m
+  [1m[35m (135.9ms)[0m  COMMIT
+Migrating to CreateQuestaousers (20150525181659)
+  [1m[36m (96.3ms)[0m  [1mCREATE TABLE `questaousers` (`id` int(11) auto_increment PRIMARY KEY, `entendimento` int(11), `questao_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_questaousers_on_questao_id`  (`questao_id`) ,  INDEX `index_questaousers_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (189.3ms)[0m  ALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_2cbae780ea`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (212.5ms)[0m  [1mALTER TABLE `questaousers` ADD CONSTRAINT `fk_rails_3c6e9e0fb3`
+FOREIGN KEY (`questao_id`)
+  REFERENCES `questaos` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150525181659')[0m
+  [1m[35m (41.7ms)[0m  COMMIT
+Migrating to Adddisponivel (20150605160447)
+  [1m[36m (189.0ms)[0m  [1mALTER TABLE `assuntos` ADD `disponivel` int(11) DEFAULT 0[0m
+  [1m[35m (200.5ms)[0m  ALTER TABLE `temas` ADD `disponivel` int(11) DEFAULT 0
+  [1m[36m (289.1ms)[0m  [1mALTER TABLE `questaos` ADD `disponivel` int(11) DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150605160447')[0m
+  [1m[35m (41.2ms)[0m  COMMIT
+Migrating to CreateFriendlyIdSlugs (20150605174003)
+  [1m[36m (86.9ms)[0m  [1mCREATE TABLE `friendly_id_slugs` (`id` int(11) auto_increment PRIMARY KEY, `slug` varchar(255) NOT NULL, `sluggable_id` int(11) NOT NULL, `sluggable_type` varchar(50), `scope` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (120.3ms)[0m  CREATE  INDEX `index_friendly_id_slugs_on_sluggable_id`  ON `friendly_id_slugs` (`sluggable_id`) 
+  [1m[36m (121.5ms)[0m  [1mCREATE  INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type`  ON `friendly_id_slugs` (`slug`, `sluggable_type`) [0m
+  [1m[35m (143.6ms)[0m  CREATE UNIQUE INDEX `index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope`  ON `friendly_id_slugs` (`slug`, `sluggable_type`, `scope`) 
+  [1m[36m (143.9ms)[0m  [1mCREATE  INDEX `index_friendly_id_slugs_on_sluggable_type`  ON `friendly_id_slugs` (`sluggable_type`) [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150605174003')[0m
+  [1m[35m (43.4ms)[0m  COMMIT
+Migrating to Gerarslug2 (20150605174528)
+  [1m[36m (500.1ms)[0m  [1mALTER TABLE `assuntos` ADD `slug` varchar(255)[0m
+  [1m[35m (222.5ms)[0m  ALTER TABLE `temas` ADD `slug` varchar(255)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150605174528')
+  [1m[36m (31.6ms)[0m  [1mCOMMIT[0m
+Migrating to Gerarslug3 (20150605175258)
+  [1m[35m (121.5ms)[0m  CREATE UNIQUE INDEX `index_assuntos_on_slug`  ON `assuntos` (`slug`) 
+  [1m[36m (110.3ms)[0m  [1mCREATE UNIQUE INDEX `index_temas_on_slug`  ON `temas` (`slug`) [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150605175258')[0m
+  [1m[35m (87.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'assuntos'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `assuntos`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'friendly_id_slugs'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `friendly_id_slugs`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'questaos'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `questaos`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'questaousers'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `questaousers`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'temas'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `temas`[0m
+  [1m[35m (0.1ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'appmysql_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+
+
+Started GET "/" for ::1 at 2015-06-08 00:09:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM `users`
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `assuntos`[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `temas`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `temas`[0m
+  Rendered visitors/index.html.erb within layouts/application (118.9ms)
+  Rendered layouts/_navigation_links.html.erb (4.7ms)
+  Rendered layouts/_navigation.html.erb (6.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 1308ms (Views: 1188.3ms | ActiveRecord: 4.3ms)
