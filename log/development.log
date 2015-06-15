@@ -28595,3 +28595,425 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_navigation.html.erb (2.0ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 151ms (Views: 150.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (76.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (63.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20150525180641)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (72.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (52.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525180641"]]
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddNameToUsers (20150525180643)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525180643"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddRoleToUsers (20150525180646)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525180646"]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestaousers (20150525181631)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (45.9ms)[0m  [1mCREATE TABLE "questaousers" ("id" serial primary key, "entendimento" integer, "questao_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.8ms)[0m  CREATE  INDEX  "index_questaousers_on_questao_id" ON "questaousers"  ("questao_id")
+  [1m[36m (32.0ms)[0m  [1mCREATE  INDEX  "index_questaousers_on_user_id" ON "questaousers"  ("user_id")[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "questaousers" ADD CONSTRAINT "fk_rails_2cbae780ea"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "questaousers" ADD CONSTRAINT "fk_rails_3c6e9e0fb3"
+FOREIGN KEY ("questao_id")
+  REFERENCES "questaos" ("id")
+[0m
+PG::UndefinedTable: ERROR:  relation "questaos" does not exist
+: ALTER TABLE "questaousers" ADD CONSTRAINT "fk_rails_3c6e9e0fb3"
+FOREIGN KEY ("questao_id")
+  REFERENCES "questaos" ("id")
+
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAssuntos (20150525181639)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (84.4ms)[0m  [1mCREATE TABLE "assuntos" ("id" serial primary key, "nome_assunto" character varying, "descricao" text, "link_image" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (33.0ms)[0m  CREATE  INDEX  "index_assuntos_on_user_id" ON "assuntos"  ("user_id")
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "assuntos" ADD CONSTRAINT "fk_rails_adcf545ded"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525181639"]]
+  [1m[36m (13.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTemas (20150525181647)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (60.7ms)[0m  [1mCREATE TABLE "temas" ("id" serial primary key, "nome_tema" character varying, "assunto_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.9ms)[0m  CREATE  INDEX  "index_temas_on_assunto_id" ON "temas"  ("assunto_id")
+  [1m[36m (65.6ms)[0m  [1mCREATE  INDEX  "index_temas_on_user_id" ON "temas"  ("user_id")[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "temas" ADD CONSTRAINT "fk_rails_20e6932d2a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "temas" ADD CONSTRAINT "fk_rails_2959d511fa"
+FOREIGN KEY ("assunto_id")
+  REFERENCES "assuntos" ("id")
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525181647"]]
+  [1m[36m (7.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestaos (20150525181654)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (72.7ms)[0m  [1mCREATE TABLE "questaos" ("id" serial primary key, "pergunta" text, "resposta" text, "dica" text, "tema_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (43.0ms)[0m  CREATE  INDEX  "index_questaos_on_tema_id" ON "questaos"  ("tema_id")
+  [1m[36m (32.0ms)[0m  [1mCREATE  INDEX  "index_questaos_on_user_id" ON "questaos"  ("user_id")[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "questaos" ADD CONSTRAINT "fk_rails_f8b8fd448d"
+FOREIGN KEY ("tema_id")
+  REFERENCES "temas" ("id")
+
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "questaos" ADD CONSTRAINT "fk_rails_16882ea958"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150525181654"]]
+  [1m[36m (9.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestaousers (20150526181631)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (40.8ms)[0m  [1mCREATE TABLE "questaousers" ("id" serial primary key, "entendimento" integer, "questao_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (32.0ms)[0m  CREATE  INDEX  "index_questaousers_on_questao_id" ON "questaousers"  ("questao_id")
+  [1m[36m (43.3ms)[0m  [1mCREATE  INDEX  "index_questaousers_on_user_id" ON "questaousers"  ("user_id")[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "questaousers" ADD CONSTRAINT "fk_rails_2cbae780ea"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "questaousers" ADD CONSTRAINT "fk_rails_3c6e9e0fb3"
+FOREIGN KEY ("questao_id")
+  REFERENCES "questaos" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150526181631"]]
+  [1m[36m (9.1ms)[0m  [1mCOMMIT[0m
+Migrating to Adddisponivel (20150605160447)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (144.3ms)[0m  [1mALTER TABLE "assuntos" ADD "disponivel" integer DEFAULT 0[0m
+  [1m[35m (144.6ms)[0m  ALTER TABLE "temas" ADD "disponivel" integer DEFAULT 0
+  [1m[36m (133.6ms)[0m  [1mALTER TABLE "questaos" ADD "disponivel" integer DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150605160447"]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFriendlyIdSlugs (20150605174003)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (65.5ms)[0m  [1mCREATE TABLE "friendly_id_slugs" ("id" serial primary key, "slug" character varying NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" character varying(50), "scope" character varying, "created_at" timestamp) [0m
+  [1m[35m (32.2ms)[0m  CREATE  INDEX  "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs"  ("sluggable_id")
+  [1m[36m (31.8ms)[0m  [1mCREATE  INDEX  "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs"  ("slug", "sluggable_type")[0m
+  [1m[35m (31.8ms)[0m  CREATE UNIQUE INDEX  "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs"  ("slug", "sluggable_type", "scope")
+  [1m[36m (31.8ms)[0m  [1mCREATE  INDEX  "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs"  ("sluggable_type")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150605174003"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+Migrating to Gerarslug2 (20150605174528)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "assuntos" ADD "slug" character varying[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "temas" ADD "slug" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150605174528"]]
+  [1m[35m (7.2ms)[0m  COMMIT
+Migrating to Gerarslug3 (20150605175258)
+  [1m[36m (47.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_assuntos_on_slug" ON "assuntos"  ("slug")[0m
+  [1m[35m (44.2ms)[0m  CREATE UNIQUE INDEX  "index_temas_on_slug" ON "temas"  ("slug")
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150605175258"]]
+  [1m[36m (8.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'assuntos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friendly_id_slugs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questaos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'questaousers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'temas'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-06-14 23:14:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (135.1ms)
+  Rendered layouts/_navigation_links.html.erb (6.6ms)
+  Rendered layouts/_navigation.html.erb (8.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 3443ms (Views: 3401.7ms | ActiveRecord: 4.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-06-15 09:14:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (96.8ms)
+  Rendered layouts/_navigation_links.html.erb (3.9ms)
+  Rendered layouts/_navigation.html.erb (6.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 904ms (Views: 878.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/body.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/top-nav-shadow.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/header-i.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/header-cnt.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/logo.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/blue-btn.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/slider.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/main-shadow.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/footer-nav-border.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/control-nav-bg.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/assets/control-nav.png" for ::1 at 2015-06-15 09:14:16 -0300
+
+
+Started GET "/users/sign_up" for ::1 at 2015-06-15 09:14:35 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/registrations/new.html.erb within layouts/application (265.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 520ms (Views: 490.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/body.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/top-nav-shadow.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/header-i.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/header-cnt.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/logo.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/blue-btn.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/slider.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/main-shadow.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/footer-nav-border.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/control-nav-bg.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started GET "/assets/control-nav.png" for ::1 at 2015-06-15 09:14:36 -0300
+
+
+Started POST "/users" for ::1 at 2015-06-15 09:14:47 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGKJwakOkrUXzkJZgP140tK/FxMYeg3w0OOazWZmggpVExRTSzA1gPZ4F+GjX3QBz0QLsLx9+ljanymAr958zg==", "user"=>{"name"=>"rafael", "email"=>"grisotto@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Cadastrar!"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (10.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'grisotto@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "name", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "grisotto@yahoo.com"], ["encrypted_password", "$2a$10$Yah3mUqCQQ19OuNZDuCvEeBOopkvbOeH48X0DeWrBqcYlv6oR.kfG"], ["name", "rafael"], ["role", 0], ["created_at", "2015-06-15 12:14:47.642935"], ["updated_at", "2015-06-15 12:14:47.642935"]]
+  [1m[36m (10.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-06-15 12:14:47.656852"], ["current_sign_in_at", "2015-06-15 12:14:47.656852"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2015-06-15 12:14:47.657847"], ["id", 1]]
+  [1m[35m (15.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 329ms (ActiveRecord: 38.1ms)
+
+
+Started GET "/" for ::1 at 2015-06-15 09:14:47 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.5ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 135ms (Views: 133.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/body.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/top-nav-shadow.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/header-i.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/header-cnt.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/logo.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/blue-btn.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/slider.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/main-shadow.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/footer-nav-border.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/control-nav-bg.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started GET "/assets/control-nav.png" for ::1 at 2015-06-15 09:14:48 -0300
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-06-15 09:15:00 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n2e00xm70bMIVcd+iFd6U0ASzEUM2p9lTzA9Sq4cCGQGFilB+4V2hunjksar9XaAXenQ5qjdaM1FTI4HZ6T2oA=="}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-15 09:15:00 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 145ms (Views: 143.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/body.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/top-nav-shadow.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/header-i.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/header-cnt.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/logo.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/blue-btn.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/slider.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/main-shadow.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/footer-nav-border.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/control-nav-bg.png" for ::1 at 2015-06-15 09:15:00 -0300
+
+
+Started GET "/assets/control-nav.png" for ::1 at 2015-06-15 09:15:01 -0300
