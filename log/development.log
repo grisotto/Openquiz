@@ -29116,3 +29116,225 @@ Started GET "/assets/control-nav-bg.png" for ::1 at 2015-06-15 10:21:18 -0300
 
 
 Started GET "/assets/control-nav.png" for ::1 at 2015-06-15 10:21:18 -0300
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "users" SET "role" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["role", 1], ["updated_at", "2015-06-15 13:36:20.066154"], ["id", 1]]
+  [1m[36m (20.0ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-06-15 10:36:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_navigation_links.html.erb (4.1ms)
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 378ms (Views: 366.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2015-06-15 10:36:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (50.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 251ms (Views: 238.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-15 10:36:49 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FkLVCcI5VcBGk6N9qlEp948wLioT+BPezItCfKN3okKBLGX4CheIxF3f+Tbaom2UE1QQOPk/KxlkH8Ef308DPw==", "user"=>{"email"=>"rafael@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "rafael@hotmail.com"]]
+Completed 401 Unauthorized in 57ms (ActiveRecord: 0.6ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FkLVCcI5VcBGk6N9qlEp948wLioT+BPezItCfKN3okKBLGX4CheIxF3f+Tbaom2UE1QQOPk/KxlkH8Ef308DPw==", "user"=>{"email"=>"rafael@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 228ms (Views: 155.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-15 10:37:02 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tC7Hbz2yMI00eV+D9t7GWVLpwwKnVsGmzRe85x/abZYjQHee9ZztiS81BciGLYI6zo39EE2R+WFlgz+EY+LM6w==", "user"=>{"email"=>"rafael@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "rafael@yahoo.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tC7Hbz2yMI00eV+D9t7GWVLpwwKnVsGmzRe85x/abZYjQHee9ZztiS81BciGLYI6zo39EE2R+WFlgz+EY+LM6w==", "user"=>{"email"=>"rafael@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 222ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-06-15 10:37:15 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9GtCAS/WhYWvJ3dRzyBI7EwrMuf6cPYHQMV0ZV2tHMVjBfLw5/hYgbRrLRq/0wyP0E8M9RC3zsDoUfcGIZW9uA==", "user"=>{"email"=>"grisotto@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Autenticar-se"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "grisotto@yahoo.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["current_sign_in_at", "2015-06-15 13:37:15.140259"], ["sign_in_count", 2], ["updated_at", "2015-06-15 13:37:15.141486"], ["id", 1]]
+  [1m[36m (69.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 70.2ms)
+
+
+Started GET "/" for ::1 at 2015-06-15 10:37:15 -0300
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 161ms (Views: 159.1ms | ActiveRecord: 1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "role" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["role", 2], ["updated_at", "2015-06-15 13:38:24.803172"], ["id", 1]]
+  [1m[36m (18.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-06-15 10:38:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (29.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (55.5ms)
+  Rendered layouts/_navigation.html.erb (56.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 406ms (Views: 391.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/admin" for ::1 at 2015-06-15 10:38:39 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.6ms)
+WARNING on line 18, column 11 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 18, column 11 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 18, column 11 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 18, column 11 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 18, column 11 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 32, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 32, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 32, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 32, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 32, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/base.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 20, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `yellow' in interpolation here.
+It may end up represented as #ffff00, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "yellow").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 20, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `orange' in interpolation here.
+It may end up represented as #ffa500, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "orange").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 20, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `red' in interpolation here.
+It may end up represented as #ff0000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "red").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 20, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `purple' in interpolation here.
+It may end up represented as #800080, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "purple").
+If you really want to use the color value here, use `"" + $name'.
+
+
+WARNING on line 20, column 7 of /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/assets/stylesheets/upmin/instances.css.scss:
+You probably don't mean to use the color value `green' in interpolation here.
+It may end up represented as #008000, which will likely produce invalid CSS.
+Always quote color names when using them as strings (for example, "green").
+If you really want to use the color value here, use `"" + $name'.
+
+
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (41.0ms)
+Completed 200 OK in 519ms (Views: 516.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2015-06-15 10:38:40 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (10.8ms)
+Completed 200 OK in 76ms (Views: 73.6ms | ActiveRecord: 0.6ms)
