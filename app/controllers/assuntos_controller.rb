@@ -10,7 +10,6 @@ class AssuntosController < ApplicationController
     # @assuntos = Assunto.all - agora so mostra os assuntos com disponivel = 1
     @assuntos = Assunto.where(:disponivel => '1').all
 
-
   end
 
   # GET /assuntos/1
@@ -36,8 +35,9 @@ class AssuntosController < ApplicationController
       if @assunto.save
         #format.html { redirect_to @assunto, notice: 'Assunto was successfully created.' }
         #format.json { render :show, status: :created, location: @assunto }
-        format.html { redirect_to @assunto, notice: 'Assunto was successfully created.' }
-        format.json { render :index, status: :created, location: @assunto }
+      format.html { redirect_to assuntos_url, notice: 'O Assunto foi criado com sucesso.' }
+      format.json { head :no_content }
+
       else
         format.html { render :new }
         format.json { render json: @assunto.errors, status: :unprocessable_entity }
@@ -73,7 +73,7 @@ class AssuntosController < ApplicationController
 
 def admin_only
     unless current_user.admin?
-      redirect_to :back, :alert => "Access denied."
+       redirect_to assuntos_url
     end
   end
     # Use callbacks to share common setup or constraints between actions.
@@ -81,9 +81,11 @@ def admin_only
       @assunto = Assunto.friendly.find(params[:id])
       #@assunto = Assunto.find(params[:id])
       #Logica para nao deixar o usuario editar modulos com disponivel = 0
-     # unless @assunto.disponivel == 1
-      #    redirect_to :back, :alert => "Access denied."
-      # end
+      unless @assunto.disponivel == 1
+   
+         redirect_to assuntos_url, :alert => "Este assunto ainda está em fase de aprovação. Aguarde" 
+      
+       end
 
     end
 
@@ -92,3 +94,4 @@ def admin_only
       params.require(:assunto).permit(:nome_assunto, :descricao, :link_image)
     end
 end
+

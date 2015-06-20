@@ -32,8 +32,10 @@ class TemasController < ApplicationController
     @tema.user = current_user
     respond_to do |format|
       if @tema.save
-        format.html { redirect_to @tema, notice: 'Tema was successfully created.' }
-        format.json { render :show, status: :created, location: @tema }
+        #format.html { redirect_to @tema, notice: 'Tema was successfully created.' }
+        #format.json { render :show, status: :created, location: @tema }
+	format.html { redirect_to temas_url, notice: 'O tema foi criado com sucesso' }
+	  format.json { head :no_content }
       else
         format.html { render :new }
         format.json { render json: @tema.errors, status: :unprocessable_entity }
@@ -70,12 +72,19 @@ class TemasController < ApplicationController
   private
 def admin_only
     unless current_user.admin?
-      redirect_to :back, :alert => "Access denied."
+	
+	redirect_to temas_url      
+#redirect_to :back, :alert => "Access denied."
     end
   end
     # Use callbacks to share common setup or constraints between actions.
     def set_tema
       @tema = Tema.friendly.find(params[:id])
+	unless @tema.disponivel == 1
+   
+         redirect_to temas_url, :alert => "Este tema ainda está em fase de aprovação. Aguarde" 
+      
+       end	
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -83,3 +92,4 @@ def admin_only
       params.require(:tema).permit(:nome_tema, :assunto_id)
     end
 end
+
