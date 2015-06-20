@@ -28654,3 +28654,1847 @@ Processing by AssuntosController#index as HTML
   Rendered layouts/_navigation.html.erb (1.1ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 186ms (Views: 183.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:36:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (20.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (17.6ms)
+  Rendered layouts/_navigation.html.erb (18.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 374ms (Views: 364.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:36:14 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (49.3ms)
+Completed 200 OK in 127ms (Views: 124.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:36:15 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (10.3ms)
+Completed 200 OK in 107ms (Views: 104.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:36:17 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"
+  [1m[36mAssunto Load (0.3ms)[0m  [1mSELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (56.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (14.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (96.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (13.4ms)
+Completed 200 OK in 198ms (Views: 193.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:41:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (19.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (14.2ms)
+  Rendered layouts/_navigation.html.erb (15.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 347ms (Views: 337.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:41:33 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 136ms (Views: 133.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-20 16:41:35 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (97.8ms)
+  Rendered assuntos/new.html.erb within layouts/application (98.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 265ms (Views: 252.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-20 16:41:39 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qX0Gdg0gazFYKw/vbqDO7WEhGat0qw0In1lmzXh4dd9MUfD+xwFblmy11UBwA60dSWOGNUyJo8fBBMWhMiJ+gw==", "assunto"=>{"nome_assunto"=>"asdasdsa", "descricao"=>"asdasdsadas"}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mAssunto Exists (0.2ms)[0m  SELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" IS NOT NULL) AND "assuntos"."slug" = ? LIMIT 1  [["slug", "asdasdsa"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "assuntos" ("nome_assunto", "descricao", "user_id", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome_assunto", "asdasdsa"], ["descricao", "asdasdsadas"], ["user_id", 2], ["slug", "asdasdsa"], ["created_at", "2015-06-20 19:41:40.001628"], ["updated_at", "2015-06-20 19:41:40.001628"]]
+  [1m[35m (218.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/assuntos
+Completed 302 Found in 327ms (ActiveRecord: 218.9ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:41:40 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 221ms (Views: 219.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:41:43 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (43.7ms)
+Completed 200 OK in 104ms (Views: 102.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:41:43 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (11.2ms)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:41:44 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (32.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (6.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (54.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.8ms)
+Completed 200 OK in 131ms (Views: 127.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:41:50 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"20"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (3.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (6.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (2.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (6.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (9.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (11.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (141.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (152.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (15.1ms)
+Completed 200 OK in 335ms (Views: 327.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:41:53 -0300
+Processing by Upmin::ModelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s0ozX61nfsnfSXcj2zQC985hNlt5YMeRoGxi8K45KwhWZsXXZ0ZObuvXrYzFl2EH5iOpxUFCaV7+McGc5GMgVA==", "assunto"=>{"nome_assunto"=>"asdasdsa", "nome_assunto_is_nil"=>"0", "descricao"=>"asdasdsadas", "link_image"=>"/uploads/default.png", "link_image_is_nil"=>"0", "user_id"=>"2", "disponivel"=>"1", "slug"=>"asdasdsa", "slug_is_nil"=>"0"}, "commit"=>"Save", "klass"=>"Assunto", "id"=>"20"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "link_image" = ?, "disponivel" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["link_image", nil], ["disponivel", 1], ["updated_at", "2015-06-20 19:41:53.511884"], ["id", 20]]
+  [1m[36m (196.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/m/Assunto/i/20
+Completed 302 Found in 204ms (ActiveRecord: 196.8ms)
+
+
+Started GET "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:41:53 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"20"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (2.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (77.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (81.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.0ms)
+Completed 200 OK in 152ms (Views: 148.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:41:56 -0300
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "assuntos"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  Rendered visitors/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 125ms (Views: 124.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:41:58 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 130.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/uploads/thumb_default.png" for 127.0.0.1 at 2015-06-20 16:41:58 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (25.5ms)
+
+
+Started GET "/assuntos/asdasdsa" for 127.0.0.1 at 2015-06-20 16:42:07 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"asdasdsa"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1  [["slug", "asdasdsa"]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? AND "temas"."disponivel" = ?[0m  [["assunto_id", 20], ["disponivel", 1]]
+  Rendered assuntos/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 178ms (Views: 174.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/uploads/thumb_default.png" for 127.0.0.1 at 2015-06-20 16:42:07 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (10.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:42:22 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (0.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (38.1ms)
+Completed 200 OK in 87ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:42:23 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (0.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.8ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:42:24 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"
+  [1m[36mAssunto Load (0.3ms)[0m  [1mSELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (26.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (38.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (7.5ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:42:28 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"20"}
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (12.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (4.0ms)
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (6.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (97.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (100.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.1ms)
+Completed 200 OK in 173ms (Views: 169.6ms | ActiveRecord: 1.9ms)
+
+
+Started PUT "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:42:34 -0300
+Processing by Upmin::ModelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMVsTF+s3E6a/tg7RDkMFtSdtESo0P+9LvRyNPzsFPot6ZrElY3s6a5gApRamm/m/N8r2pDyUXJwqdFYtrYfpg==", "assunto"=>{"nome_assunto"=>"asdasdsa", "nome_assunto_is_nil"=>"0", "descricao"=>"asdasdsadas", "link_image"=>"/uploads/default.jpg", "link_image_is_nil"=>"0", "user_id"=>"2", "disponivel"=>"1", "slug"=>"asdasdsa", "slug_is_nil"=>"0"}, "commit"=>"Save", "klass"=>"Assunto", "id"=>"20"}
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "assuntos" SET "link_image" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?  [["link_image", nil], ["updated_at", "2015-06-20 19:42:34.111206"], ["id", 20]]
+  [1m[36m (825.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/m/Assunto/i/20
+Completed 302 Found in 832ms (ActiveRecord: 826.1ms)
+
+
+Started GET "/admin/m/Assunto/i/20" for 127.0.0.1 at 2015-06-20 16:42:35 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"20"}
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (2.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?  [["assunto_id", 20]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (68.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (72.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (9.1ms)
+Completed 200 OK in 145ms (Views: 142.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:42:38 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 136.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:42:38 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.9ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:42:40 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 167ms (Views: 165.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:42:41 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/assuntos/asdasdsa" for 127.0.0.1 at 2015-06-20 16:42:42 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"asdasdsa"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1  [["slug", "asdasdsa"]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? AND "temas"."disponivel" = ?[0m  [["assunto_id", 20], ["disponivel", 1]]
+  Rendered assuntos/show.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 138ms (Views: 135.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:42:42 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (25.8ms)
+
+
+Started GET "/assuntos/asdasdsa" for 127.0.0.1 at 2015-06-20 16:42:44 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"asdasdsa"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1[0m  [["slug", "asdasdsa"]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? AND "temas"."disponivel" = ?  [["assunto_id", 20], ["disponivel", 1]]
+  Rendered assuntos/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 168ms (Views: 164.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:42:45 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:43:04 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 127ms (Views: 125.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:43:04 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (68.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.9ms)
+
+
+Started GET "/assuntos/new" for 127.0.0.1 at 2015-06-20 16:43:06 -0300
+Processing by AssuntosController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered assuntos/_form.html.erb (53.6ms)
+  Rendered assuntos/new.html.erb within layouts/application (54.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 189ms (Views: 186.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-20 16:43:12 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P73zRmearj/CWweuZFJTozOCIIx+dx7xB397s7m9vcXakQXOrbuemPbF3QF68TBTG8C/EkZVsD5ZItjf8+e2mQ==", "assunto"=>{"nome_assunto"=>"teste222", "descricao"=>"teste222"}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAssunto Exists (0.1ms)[0m  SELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" IS NOT NULL) AND "assuntos"."slug" = ? LIMIT 1  [["slug", "teste222"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered assuntos/_form.html.erb (58.5ms)
+  Rendered assuntos/new.html.erb within layouts/application (59.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 213ms (Views: 205.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/assuntos" for 127.0.0.1 at 2015-06-20 16:43:16 -0300
+Processing by AssuntosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hr60SbWngX/XV7dI0dxpEvoOkNbywnESt5qgdck3+KFjkkLBf4ax2OPJbefPfwri0kwPSMrg393pxwMZg23z/Q==", "assunto"=>{"nome_assunto"=>"teste222", "descricao"=>"teste2222222"}, "commit"=>"Criar Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAssunto Exists (0.1ms)[0m  SELECT  1 AS one FROM "assuntos" WHERE ("assuntos"."id" IS NOT NULL) AND "assuntos"."slug" = ? LIMIT 1  [["slug", "teste222"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "assuntos" ("nome_assunto", "descricao", "user_id", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome_assunto", "teste222"], ["descricao", "teste2222222"], ["user_id", 2], ["slug", "teste222"], ["created_at", "2015-06-20 19:43:16.342847"], ["updated_at", "2015-06-20 19:43:16.342847"]]
+  [1m[35m (151.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/assuntos
+Completed 302 Found in 158ms (ActiveRecord: 152.3ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:43:16 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 249ms (Views: 246.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:43:16 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (105.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:43:20 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (14.4ms)
+Completed 200 OK in 112ms (Views: 111.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:43:20 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (0.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (15.0ms)
+Completed 200 OK in 117ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:43:21 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (31.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (43.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.7ms)
+Completed 200 OK in 105ms (Views: 102.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/m/Assunto/i/21" for 127.0.0.1 at 2015-06-20 16:43:29 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"21"}
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (2.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (84.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (88.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.5ms)
+Completed 200 OK in 153ms (Views: 151.1ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/admin/m/Assunto/i/21" for 127.0.0.1 at 2015-06-20 16:43:33 -0300
+Processing by Upmin::ModelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zF+l2L8bCqzjuXPj1J52gwmjAoxffpicCgY90yGiaxgpc1NQdTo6C9cnqUzKPRVzIeGdEmdcNlNUW56/a/hgRA==", "assunto"=>{"nome_assunto"=>"teste222", "nome_assunto_is_nil"=>"0", "descricao"=>"teste2222222", "link_image"=>"/uploads/default.png", "link_image_is_nil"=>"0", "user_id"=>"2", "disponivel"=>"1", "slug"=>"teste222", "slug_is_nil"=>"0"}, "commit"=>"Save", "klass"=>"Assunto", "id"=>"21"}
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "assuntos" SET "link_image" = ?, "disponivel" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?[0m  [["link_image", nil], ["disponivel", 1], ["updated_at", "2015-06-20 19:43:33.247884"], ["id", 21]]
+  [1m[35m (205.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/m/Assunto/i/21
+Completed 302 Found in 215ms (ActiveRecord: 206.3ms)
+
+
+Started GET "/admin/m/Assunto/i/21" for 127.0.0.1 at 2015-06-20 16:43:33 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"21"}
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (3.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (69.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (74.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (13.9ms)
+Completed 200 OK in 147ms (Views: 143.9ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/admin/m/Assunto/i/21" for 127.0.0.1 at 2015-06-20 16:43:43 -0300
+Processing by Upmin::ModelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7EA+7/XWPCqeHiLLPc8c+yz15wUkiH9aWJ4RHvLV4x8JbMhnP/cMjaqA+GQjbH8LBLd4mxyq0ZUGw7JyuI/oQw==", "assunto"=>{"nome_assunto"=>"teste222", "nome_assunto_is_nil"=>"0", "descricao"=>"teste2222222", "link_image"=>"/uploads/default.jpg", "link_image_is_nil"=>"0", "user_id"=>"2", "disponivel"=>"1", "slug"=>"teste222", "slug_is_nil"=>"0"}, "commit"=>"Save", "klass"=>"Assunto", "id"=>"21"}
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAssunto Load (0.1ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "assuntos" SET "link_image" = ?, "updated_at" = ? WHERE "assuntos"."id" = ?[0m  [["link_image", nil], ["updated_at", "2015-06-20 19:43:43.485055"], ["id", 21]]
+  [1m[35m (226.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/m/Assunto/i/21
+Completed 302 Found in 234ms (ActiveRecord: 226.5ms)
+
+
+Started GET "/admin/m/Assunto/i/21" for 127.0.0.1 at 2015-06-20 16:43:43 -0300
+Processing by Upmin::ModelsController#show as HTML
+  Parameters: {"klass"=>"Assunto", "id"=>"21"}
+  [1m[36mAssunto Load (0.1ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_text.html.haml (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_datetime.html.haml (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_integer.html.haml (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/attributes/_string.html.haml (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (2.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas" WHERE "temas"."assunto_id" = ?[0m  [["assunto_id", 21]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/associations/_associations.html.haml (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/models/_model.html.haml (66.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/show.html.haml within layouts/upmin/application (70.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (11.3ms)
+Completed 200 OK in 140ms (Views: 137.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:44:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.3ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (43.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (11.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (78.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (21.6ms)
+Completed 200 OK in 380ms (Views: 317.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:44:39 -0300
+Processing by AssuntosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 187ms (Views: 184.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:44:40 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (24.3ms)
+
+
+Started GET "/assuntos/asdasdsa" for 127.0.0.1 at 2015-06-20 16:44:44 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"asdasdsa"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssunto Load (0.2ms)[0m  SELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1  [["slug", "asdasdsa"]]
+  [1m[36mTema Load (0.2ms)[0m  [1mSELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? AND "temas"."disponivel" = ?[0m  [["assunto_id", 20], ["disponivel", 1]]
+  Rendered assuntos/show.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 164ms (Views: 161.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:44:44 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (23.4ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:44:47 -0300
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?[0m  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 159ms (Views: 156.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:44:48 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (25.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:44:48 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (10.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (10.6ms)
+Completed 200 OK in 77ms (Views: 75.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-06-20 16:44:49 -0300
+Processing by Upmin::ModelsController#dashboard as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/dashboard.html.haml within layouts/upmin/application (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (8.4ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/m/Assunto" for 127.0.0.1 at 2015-06-20 16:44:50 -0300
+Processing by Upmin::ModelsController#search as HTML
+  Parameters: {"klass"=>"Assunto"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "assuntos"."id") FROM "assuntos"[0m
+  [1m[35mAssunto Load (0.4ms)[0m  SELECT  DISTINCT "assuntos".* FROM "assuntos" LIMIT 30 OFFSET 0
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_results/_results.html.haml (36.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/partials/search_boxes/_ransack_search_box.html.haml (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/upmin/models/search.html.haml within layouts/upmin/application (49.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/upmin-admin-0.1.01/app/views/layouts/upmin/_navbar.html.haml (9.9ms)
+Completed 200 OK in 132ms (Views: 128.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:50:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.2ms)[0m  [1mSELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?[0m  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (1.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 372ms (Views: 331.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:50:23 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (24.2ms)
+
+
+Started GET "/assuntos/uploads/assunto/link_image/10/thumb_Database_iStock_000020783950XSmall_0.jpg" for 127.0.0.1 at 2015-06-20 16:50:36 -0300
+
+ActionController::RoutingError (No route matches [GET] "/assuntos/uploads/assunto/link_image/10/thumb_Database_iStock_000020783950XSmall_0.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (10.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.0ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:50:43 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:50:47 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (23.0ms)
+
+
+Started GET "/assuntos/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:50:59 -0300
+
+ActionController::RoutingError (No route matches [GET] "/assuntos/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (59.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (10.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.7ms)
+
+
+Started GET "/uploads/thumb_default.jpg" for 127.0.0.1 at 2015-06-20 16:51:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/uploads/thumb_default.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:580:in `process_client'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:674:in `worker_loop'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+  unicorn (4.9.0) lib/unicorn/http_server.rb:140:in `start'
+  unicorn-rails (2.2.0) lib/unicorn_rails.rb:33:in `run'
+  rack (1.6.1) lib/rack/server.rb:286:in `start'
+  railties (4.2.1) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.1) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.1) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `load'
+  spring (1.3.6) lib/spring/client/rails.rb:28:in `call'
+  spring (1.3.6) lib/spring/client/command.rb:7:in `call'
+  spring (1.3.6) lib/spring/client.rb:26:in `run'
+  spring (1.3.6) bin/spring:48:in `<top (required)>'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `load'
+  spring (1.3.6) lib/spring/binstub.rb:11:in `<top (required)>'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  /usr/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (10.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (22.2ms)
+
+
+Started GET "/assuntos" for 127.0.0.1 at 2015-06-20 16:52:04 -0300
+Processing by AssuntosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.4ms)[0m  [1mSELECT "assuntos".* FROM "assuntos" WHERE "assuntos"."disponivel" = ?[0m  [["disponivel", 1]]
+  Rendered assuntos/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 194ms (Views: 190.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assuntos/asdasdsa" for 127.0.0.1 at 2015-06-20 16:52:18 -0300
+Processing by AssuntosController#show as HTML
+  Parameters: {"id"=>"asdasdsa"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mAssunto Load (0.4ms)[0m  [1mSELECT  "assuntos".* FROM "assuntos" WHERE "assuntos"."slug" = ?  ORDER BY "assuntos"."id" ASC LIMIT 1[0m  [["slug", "asdasdsa"]]
+  [1m[35mTema Load (0.1ms)[0m  SELECT "temas".* FROM "temas" WHERE "temas"."assunto_id" = ? AND "temas"."disponivel" = ?  [["assunto_id", 20], ["disponivel", 1]]
+  Rendered assuntos/show.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 153ms (Views: 150.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:52:28 -0300
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "assuntos"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temas"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "temas"
+  Rendered visitors/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 147ms (Views: 145.8ms | ActiveRecord: 0.4ms)
