@@ -221,6 +221,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick (= 3.8.0)
   quiet_assets
   rails (= 4.2.1)

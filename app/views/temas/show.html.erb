@@ -14,9 +14,42 @@
 <% @tema.questaos.each do |questao| %>
   <p>
     
-    <li><%= link_to questao.id, questao %></li>
+    <li><%= link_to questao.pergunta, questao %></li>
   </p>
+
+
 <% end %>
 <%= link_to 'Cadastrar Questoes', new_questao_path%> |
 <%= link_to 'Edit', edit_tema_path(@tema) %> |
 <%= link_to 'Back', temas_path %>
+
+<table>
+  <thead>
+  <tr>
+    <th>Pergunta</th>
+    <th>Resposta</th>
+    <th>Dica</th>
+    <th>Tema</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @questaos.each do |questao| %>
+      <tr>
+        <td><%= questao.pergunta %></td>
+        <td><%= questao.resposta %></td>
+        <td><%= questao.dica %></td>
+        <td><%= questao.tema_id %></td>
+        <td><%= link_to 'Show', questao %></td>
+        <td><%= link_to 'Edit', edit_questao_path(questao) %></td>
+        <td><%= link_to 'Destroy', questao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= paginate @questaos %>

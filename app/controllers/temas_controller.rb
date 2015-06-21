@@ -14,6 +14,9 @@ class TemasController < ApplicationController
   # GET /temas/1
   # GET /temas/1.json
   def show
+    #falta ainda limitar se esta disponivel
+    tema = @tema.id
+    @questaos = Questao.order("id").where(:tema_id => tema).page(params[:page]).per(1)
   end
 
   # GET /temas/new

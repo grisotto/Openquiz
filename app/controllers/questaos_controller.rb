@@ -4,11 +4,13 @@ class QuestaosController < ApplicationController
 
   before_action :set_questao, only: [:show, :edit, :update, :destroy]
 
+
   # GET /questaos
   # GET /questaos.json
   def index
         #@questaos = Questao.all
     @questaos = Questao.where(:disponivel => '1').all
+    @questaos = Questao.order("id").where(:tema_id => 12).page(params[:page]).per(1)
   end
 
   def specializations

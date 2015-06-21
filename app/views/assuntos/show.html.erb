@@ -11,7 +11,7 @@
 <h2>Temas</h2>
 <% @assunto.temas.where(:disponivel => '1').each do |tema| %>
   <p>
-    <li><%= link_to tema.nome_tema, tema %></li>
+    <li><%= link_to questao_path, tema %></li>
   </p>
  
 <% end %>

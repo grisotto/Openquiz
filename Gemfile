@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'kaminari'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
