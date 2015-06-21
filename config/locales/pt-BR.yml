@@ -3,7 +3,7 @@ pt-BR:
   views:
       pagination:
         previous: "&lt; Anterior"
-        next: "Proxima &gt;"
+        next: "Pular Questao &gt;"
         truncate: "..."
   date:
     abbr_day_names:
