@@ -11,6 +11,13 @@ class QuestaosController < ApplicationController
     @questaos = Questao.where(:disponivel => '1').all
   end
 
+  def specializations
+    assunto = Assunto.find(params[:assunto_id])
+    respond_to do |format|
+      format.json { render :json => assunto.temas }
+    end
+  end
+
   # GET /questaos/1
   # GET /questaos/1.json
   def show
@@ -30,6 +37,8 @@ class QuestaosController < ApplicationController
   def create
     @questao = Questao.new(questao_params)
     @questao.user = current_user
+    @questao.tema_id = (params[:tema_id])
+    @questao.assunto_id = (params[:assunto_id])
     respond_to do |format|
       if @questao.save
         format.html { redirect_to @questao, notice: 'Questao was successfully created.' }
@@ -78,6 +87,6 @@ def admin_only
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questao_params
-      params.require(:questao).permit(:pergunta, :resposta, :dica, :tema_id)
+      params.require(:questao).permit(:pergunta, :resposta, :dica, :tema_id, :assunto_id)
     end
 end

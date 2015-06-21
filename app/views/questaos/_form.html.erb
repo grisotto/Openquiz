@@ -1,20 +1,36 @@
 <%= simple_form_for(@questao) do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.label :assunto_id %>
-    <%= f.collection_select(:assunto_id, Assunto.all, :id, :nome_assunto, prompt: true) %>
+    <div class="form-inputs">
+
+    <%= select_tag :assunto_id, options_from_collection_for_select(Assunto.all, "id", "nome_assunto"), :prompt => "Selecione um Assunto" %>
+
     <%= link_to '+', new_assunto_path,:class =>"btn btn-success" %>
      </br>
-    <%= f.label :tema_id %>
-    <%= f.collection_select(:tema_id, Tema.all, :id, :nome_tema, prompt: true) %>
+
+    <%=  select_tag :tema_id, options_from_collection_for_select([], "id", "nome_tema"),
+                   "data-option-dependent" => true,
+                   "data-option-observed" => "assunto_id",
+                   "data-option-url" => "/assuntos/:assunto_id:/specializations.json",
+                   "data-option-key-method" => :id,
+                   "data-option-value-method" => :nome_tema %>
+
+
 
     <%= link_to '+', new_tema_path,:class =>"btn btn-success" %>
+
+
     <%= f.input :pergunta %>
     <%= f.input :resposta %>
     <%= f.input :dica %>
-  
-        
+
+
+
+
+
+
+
+
    </div>
 
   <div class="form-actions">
