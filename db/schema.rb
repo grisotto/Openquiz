@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620203207) do
+ActiveRecord::Schema.define(version: 20150621225130) do
 
   create_table "assuntos", force: :cascade do |t|
     t.string   "nome_assunto"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150620203207) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "tema_id"
   end
 
   add_index "questaousers", ["questao_id"], name: "index_questaousers_on_questao_id"

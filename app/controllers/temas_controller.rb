@@ -17,6 +17,34 @@ class TemasController < ApplicationController
     #falta ainda limitar se esta disponivel
     tema = @tema.id
     @questaos = Questao.order("id").where(:tema_id => tema).page(params[:page]).per(1)
+
+   # @questaos = Questaouser.where(:tema_id => tema, :user_id => 2)
+    user = current_user
+    #@questaouser = Questaouser.find(user.id) parte para nao ficar populando toda hora o banco
+
+    @questaos2 = Questao.where(:tema_id => tema).all.pluck(:id)
+    @todos = Questao.where(:tema_id => tema).all.count
+    i = 0
+    if Questaouser.where(:tema_id => tema, :user_id => user) == []
+    while i <  @todos do
+      @questaousersalva = Questaouser.new()
+      @questaousersalva.user = user
+      @questaousersalva.entendimento = 0
+      @questaousersalva.tema_id = tema
+
+
+      @questaousersalva.questao_id = @questaos2[i]
+      @questaousersalva.save
+    i = i + 1
+
+    end
+      end
+
+
+    #questao2 = Questaousers.all
+
+
+
   end
 
   # GET /temas/new
@@ -94,5 +122,7 @@ def admin_only
     def tema_params
       params.require(:tema).permit(:nome_tema, :assunto_id)
     end
+
+
 end
 
