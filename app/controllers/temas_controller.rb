@@ -9,12 +9,44 @@ class TemasController < ApplicationController
   def index
     #@temas = Tema.all
     @temas = Tema.where(:disponivel => '1').all
+
   end
 
   # GET /temas/1
   # GET /temas/1.json
   def autoavaliacao
-    redirect_to temas_url, :alert => "Fudeuu"
+
+    @questaoavaliada = params[:questaoz]
+    @teste = params[:questaox]
+    a = Questaouser.where(:questao_id => @questaoavaliada, :user_id => current_user).pluck(:id)
+
+
+    if params[:auto1]
+      Questaouser.where(id: a).update_all(entendimento: 1)
+
+
+    elsif params[:auto2]
+
+
+      Questaouser.where(id: a).update_all(entendimento: 2)
+      redirect_to temas_url, :alert => "Este tema ainda está em fase de aprovação. Aguarde"
+
+    elsif params[:auto3]
+      Questaouser.where(id: a).update_all(entendimento: 3)
+
+
+    elsif params[:auto4]
+      Questaouser.where(id: a).update_all(entendimento: 4)
+
+
+    else
+      Questaouser.where(id: a).update_all(entendimento: 5)
+
+
+
+    end
+
+    redirect_to(:back)
 
   end
 
@@ -47,7 +79,7 @@ class TemasController < ApplicationController
       end
 
 
-    #questao2 = Questaousers.all
+
 
 
 

@@ -12,6 +12,7 @@
             }
 </script>
 
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -35,6 +36,7 @@
 
  <button type="button" class="btn btn-info" onclick="habilitaDica()" >Mostrar Dica</button>
   <button type="button" class="btn btn-primary" onclick="habilitaResposta()" >Revelar Resposta</button>
+
  <%= paginate @questaos %>
 
 <div class="form-group has-success">
@@ -45,32 +47,39 @@
   <label id="lbresposta" class="control-label" for="resposta" style="visibility:hidden">Resposta</label>
   <input type="hidden" class="form-control" id="resposta"  value="<%= questao.resposta %>" disabled>
 </div>
-<% end %>
+
 
 <h1>Qual e seu indice de conhecimento sobre essa pergunta?</h1>
 
-<button type="button" class="btn btn-danger" style="padding:40px;padding-left:90px;padding-right:90px;"> 1 </button>
 
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-warning" style="padding:40px;padding-left:90px;padding-right:90px;">2</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-info" style="padding:40px;padding-left:90px;padding-right:90px;">3</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-primary" style="padding:40px;padding-left:90px;padding-right:90px;">4</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-success" style="padding:40px;padding-left:90px;padding-right:90px;">5</button>
+     <%=form_tag(autoavaliacao_path, :method => "post")%>
 
 
+         <%= hidden_field_tag :questaoz, questao.id %>
+     <%= submit_tag '1', :name => 'auto1' , :class =>"btn btn-danger", :style => "padding:40px;padding-left:90px;padding-right:90px;" %>
+     <%= submit_tag '2', :name => 'auto2' ,:class =>"btn btn-warning", :style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '3', :name => 'auto3' ,:class =>"btn btn-info",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '4', :name => 'auto4' ,:class =>"btn btn-primary",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '5', :name => 'auto5' ,:class =>"btn btn-success",:style => 'padding:40px;padding-left:90px;padding-right:90px;'%>
+
+     <% if @questaos.last_page? %>
+
+         <%= link_to 'Ver outros temas', assunto_path(questao.assunto_id), target:'_self',:class =>"btn btn-success", :style => "padding:40px;padding-left:90px;padding-right:90px;"%>
 
 
 
- <%= simple_form_for @tema, :url => autoavaliacao_path, :method => :post do |f| %>
+     <% else %>
+         <p>
+           <%= link_to_next_page @questaos, "Salvar" ,:name => 'auto3' , :class =>"btn btn-success",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+         </p>
+     <% end %>
+    <% end %>
 
 
-     <%= f.button :submit %>
 
- <% end %>
+
+
+
+
+
 
