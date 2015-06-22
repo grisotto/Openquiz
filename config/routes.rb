@@ -15,4 +15,5 @@ end
 
 
   get "assuntos/:assunto_id/specializations" => "questaos#specializations", :as => "specializations", :format => :json
+  post "temas/:tema_id/autoavaliacao" => "temas#autoavaliacao", :as => "autoavaliacao", :format => :json
 end

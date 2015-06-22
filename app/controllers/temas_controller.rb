@@ -13,6 +13,12 @@ class TemasController < ApplicationController
 
   # GET /temas/1
   # GET /temas/1.json
+  def autoavaliacao
+    redirect_to temas_url, :alert => "Fudeuu"
+
+  end
+
+
   def show
     #falta ainda limitar se esta disponivel
     tema = @tema.id
