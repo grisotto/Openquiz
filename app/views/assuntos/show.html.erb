@@ -2,21 +2,24 @@
 
 <p>
   <h2><%= @assunto.nome_assunto %></h2>
-  <strong>Questoes Estudadas:</strong>
+
 </p>
 
 <p>
   <%=image_tag(@assunto.link_image_url(:thumb)) %>
 </p>
 <h2>Temas</h2>
+<strong>Temas Disponiveis:</strong>
 <% @assunto.temas.where(:disponivel => '1').each do |tema| %>
+
   <p>
-    <li><%= link_to questao_path, tema %></li>
+    <li><%= link_to questao_path,tema  %></li>
   </p>
  
 <% end %>
-<%= link_to 'Cadastrar Nova Questao', new_questao_path, target:'_self'%>
-<%= link_to 'Voltar', assuntos_path %>
+</br>
+<%= link_to 'Cadastrar Nova Questao', new_questao_path, target:'_self', :class =>"btn btn-success"%>
+<%= link_to 'Voltar', assuntos_path ,:class =>"btn btn-warning" %>
 
 
 

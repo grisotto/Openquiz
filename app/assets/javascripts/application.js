@@ -44,3 +44,6 @@ jQuery(document).ready(function () {
         });
     });
 });
+$(document).ready(function() {
+    $('.has-tooltip').tooltip();
+});
