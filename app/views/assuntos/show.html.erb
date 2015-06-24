@@ -13,8 +13,9 @@
 <% @assunto.temas.where(:disponivel => '1').each do |tema| %>
 
   <p>
-    <li><%= link_to questao_path,tema  %></li>
-  </p>
+    <li><%= link_to tema.nome_tema, tema %></li>
+
+
  
 <% end %>
 </br>
