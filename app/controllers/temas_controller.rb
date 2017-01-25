@@ -9,11 +9,80 @@ class TemasController < ApplicationController
   def index
     #@temas = Tema.all
     @temas = Tema.where(:disponivel => '1').all
+
   end
 
   # GET /temas/1
   # GET /temas/1.json
+  def autoavaliacao
+
+    @questaoavaliada = params[:questaoz]
+    @teste = params[:questaox]
+    a = Questaouser.where(:questao_id => @questaoavaliada, :user_id => current_user).pluck(:id)
+
+
+    if params[:auto1]
+      Questaouser.where(id: a).update_all(entendimento: 1)
+
+
+    elsif params[:auto2]
+
+
+      Questaouser.where(id: a).update_all(entendimento: 2)
+      redirect_to temas_url, :alert => "Este tema ainda está em fase de aprovação. Aguarde"
+
+    elsif params[:auto3]
+      Questaouser.where(id: a).update_all(entendimento: 3)
+
+
+    elsif params[:auto4]
+      Questaouser.where(id: a).update_all(entendimento: 4)
+
+
+    else
+      Questaouser.where(id: a).update_all(entendimento: 5)
+
+
+
+    end
+
+    redirect_to(:back)
+
+  end
+
+
   def show
+    #falta ainda limitar se esta disponivel
+    tema = @tema.id
+    @questaos = Questao.order("id").where(:tema_id => tema).page(params[:page]).per(1)
+
+   # @questaos = Questaouser.where(:tema_id => tema, :user_id => 2)
+    user = current_user
+    #@questaouser = Questaouser.find(user.id) parte para nao ficar populando toda hora o banco
+
+    @questaos2 = Questao.where(:tema_id => tema).all.pluck(:id)
+    @todos = Questao.where(:tema_id => tema).all.count
+    i = 0
+    if Questaouser.where(:tema_id => tema, :user_id => user) == []
+    while i <  @todos do
+      @questaousersalva = Questaouser.new()
+      @questaousersalva.user = user
+      @questaousersalva.entendimento = 0
+      @questaousersalva.tema_id = tema
+
+
+      @questaousersalva.questao_id = @questaos2[i]
+      @questaousersalva.save
+    i = i + 1
+
+    end
+      end
+
+
+
+
+
+
   end
 
   # GET /temas/new
@@ -91,4 +160,7 @@ def admin_only
     def tema_params
       params.require(:tema).permit(:nome_tema, :assunto_id)
     end
+
+
 end
+

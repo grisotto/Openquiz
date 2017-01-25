@@ -1,3 +1,18 @@
+ <script type="text/javascript">
+        function habilitaDica () {
+              document.getElementById("dica").type="text"; 
+              document.getElementById("lbdica").style.visibility="visible";
+           
+            }
+
+                function habilitaResposta () {
+              document.getElementById("resposta").type="text"; 
+               document.getElementById("lbresposta").style.visibility="visible";    
+
+            }
+</script>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,13 +25,61 @@
   <%= @tema.assunto.nome_assunto %>
 
 </p>
-<h2>Questões</h2>
-<% @tema.questaos.each do |questao| %>
-  <p>
-    
-    <li><%= link_to questao.id, questao %></li>
-  </p>
-<% end %>
-<%= link_to 'Cadastrar Questoes', new_questao_path%> |
-<%= link_to 'Edit', edit_tema_path(@tema) %> |
-<%= link_to 'Back', temas_path %>
+<%= link_to 'Cadastrar Questoes', new_questao_path%>
+<h1 align="center">Respondendo Pergunta 0 de 10</h1>
+
+ <% @questaos.each do |questao| %> 
+<div class="form-group has-success">
+  <label class="control-label" for="pergunta">Pergunta</label>
+  <input type="text" class="form-control" id="pergunta"  value="<%= questao.pergunta %>" disabled>
+</div>
+
+ <button type="button" class="btn btn-info" onclick="habilitaDica()" >Mostrar Dica</button>
+  <button type="button" class="btn btn-primary" onclick="habilitaResposta()" >Revelar Resposta</button>
+
+ <%= paginate @questaos %>
+
+<div class="form-group has-success">
+  <label id="lbdica"class="control-label" for="dica" style="visibility:hidden">Dica</label> 
+  <input type="hidden" class="form-control" id="dica"  value="<%= questao.dica %>" disabled>
+</div>
+<div class="form-group has-success">
+  <label id="lbresposta" class="control-label" for="resposta" style="visibility:hidden">Resposta</label>
+  <input type="hidden" class="form-control" id="resposta"  value="<%= questao.resposta %>" disabled>
+</div>
+
+
+<h1>Qual e seu indice de conhecimento sobre essa pergunta?</h1>
+
+
+     <%=form_tag(autoavaliacao_path, :method => "post")%>
+
+
+         <%= hidden_field_tag :questaoz, questao.id %>
+     <%= submit_tag '1', :name => 'auto1' , :class =>"btn btn-danger", :style => "padding:40px;padding-left:90px;padding-right:90px;" %>
+     <%= submit_tag '2', :name => 'auto2' ,:class =>"btn btn-warning", :style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '3', :name => 'auto3' ,:class =>"btn btn-info",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '4', :name => 'auto4' ,:class =>"btn btn-primary",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+     <%= submit_tag '5', :name => 'auto5' ,:class =>"btn btn-success",:style => 'padding:40px;padding-left:90px;padding-right:90px;'%>
+
+     <% if @questaos.last_page? %>
+
+         <%= link_to 'Ver outros temas', assunto_path(questao.assunto_id), target:'_self',:class =>"btn btn-success", :style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+
+
+
+     <% else %>
+         <p>
+           <%= link_to_next_page @questaos, "Salvar" ,:name => 'auto3' , :class =>"btn btn-success",:style => "padding:40px;padding-left:90px;padding-right:90px;"%>
+         </p>
+     <% end %>
+    <% end %>
+
+
+
+
+
+
+
+
+

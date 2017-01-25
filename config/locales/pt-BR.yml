@@ -1,5 +1,10 @@
 ---
 pt-BR:
+  views:
+      pagination:
+        previous: "&lt; Anterior"
+        next: "Pular Questao &gt;"
+        truncate: "..."
   date:
     abbr_day_names:
     - Dom
