@@ -26,12 +26,16 @@
 
 
 
+   <%= f.label :tema_id %>
+    <%= f.collection_select(:tema_id, Tema.all, :id, :nome_tema, prompt: true) %>
 
 
+    <%= link_to 'Cadastrar novo tema', new_tema_path %>
+        
+   
+    
+  </div>
 
-
-
-   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

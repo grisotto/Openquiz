@@ -35,7 +35,9 @@ class AssuntosController < ApplicationController
       if @assunto.save
         #format.html { redirect_to @assunto, notice: 'Assunto was successfully created.' }
         #format.json { render :show, status: :created, location: @assunto }
+
       format.html { redirect_to assuntos_url, notice: 'O Assunto foi criado com sucesso.' }
+
       format.json { head :no_content }
 
       else

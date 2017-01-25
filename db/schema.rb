@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150621225130) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "assuntos", force: :cascade do |t|
     t.string   "nome_assunto"
     t.text     "descricao"
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.string   "slug"
   end
 
-  add_index "assuntos", ["slug"], name: "index_assuntos_on_slug", unique: true
-  add_index "assuntos", ["user_id"], name: "index_assuntos_on_user_id"
+  add_index "assuntos", ["slug"], name: "index_assuntos_on_slug", unique: true, using: :btree
+  add_index "assuntos", ["user_id"], name: "index_assuntos_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -35,10 +38,10 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "questaos", force: :cascade do |t|
     t.text     "pergunta"
@@ -52,8 +55,8 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.integer  "assunto_id", default: 0
   end
 
-  add_index "questaos", ["tema_id"], name: "index_questaos_on_tema_id"
-  add_index "questaos", ["user_id"], name: "index_questaos_on_user_id"
+  add_index "questaos", ["tema_id"], name: "index_questaos_on_tema_id", using: :btree
+  add_index "questaos", ["user_id"], name: "index_questaos_on_user_id", using: :btree
 
   create_table "questaousers", force: :cascade do |t|
     t.integer  "entendimento"
@@ -64,8 +67,8 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.integer  "tema_id"
   end
 
-  add_index "questaousers", ["questao_id"], name: "index_questaousers_on_questao_id"
-  add_index "questaousers", ["user_id"], name: "index_questaousers_on_user_id"
+  add_index "questaousers", ["questao_id"], name: "index_questaousers_on_questao_id", using: :btree
+  add_index "questaousers", ["user_id"], name: "index_questaousers_on_user_id", using: :btree
 
   create_table "temas", force: :cascade do |t|
     t.string   "nome_tema"
@@ -77,9 +80,9 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.string   "slug"
   end
 
-  add_index "temas", ["assunto_id"], name: "index_temas_on_assunto_id"
-  add_index "temas", ["slug"], name: "index_temas_on_slug", unique: true
-  add_index "temas", ["user_id"], name: "index_temas_on_user_id"
+  add_index "temas", ["assunto_id"], name: "index_temas_on_assunto_id", using: :btree
+  add_index "temas", ["slug"], name: "index_temas_on_slug", unique: true, using: :btree
+  add_index "temas", ["user_id"], name: "index_temas_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -98,7 +101,14 @@ ActiveRecord::Schema.define(version: 20150621225130) do
     t.integer  "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "assuntos", "users"
+  add_foreign_key "questaos", "temas"
+  add_foreign_key "questaos", "users"
+  add_foreign_key "questaousers", "questaos"
+  add_foreign_key "questaousers", "users"
+  add_foreign_key "temas", "assuntos"
+  add_foreign_key "temas", "users"
 end

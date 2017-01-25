@@ -9,8 +9,10 @@
   <%=image_tag(@assunto.link_image_url(:thumb)) %>
 </p>
 <h2>Temas</h2>
+
 <strong>Temas Disponiveis:</strong>
 <% @assunto.temas.where(:disponivel => '1').each do |tema| %>
+
 
   <p>
     <li><%= link_to tema.nome_tema, tema %></li>
